@@ -1,44 +1,34 @@
 from rich.console import Console, Group
 from rich.live import Live
 from rich.text import Text
-from rich.syntax import Syntax
 from rich.markdown import Markdown
-from client import Client, Manager, Completion, Search, Response
-from re import S, compile, search
+from client import Client, Manager, Completion
+from parts import Response, Search
 from process import pwsh
 
 console = Console()
-
-
-pattern = compile(r"<shell(?:\s+timeout=(\d+))?\s*>(.*?)</shell>", flags=S)
 
 
 class Message(Completion):
     type T = Message
 
     def update(self, chunk: str):
-        super().update(chunk)
+        res = super().update(chunk)
         live.update(Text(str(self)), refresh=True)
-        tail = self.tail
-        if isinstance(tail, Response) and search(pattern, tail.content):
-            return True
+        return res
 
     def wrap(self, query: str):
         return Message(self, query)
 
     def send(self) -> T:
-        message = manager.send(self)
-        matched = search(pattern, message.tail.content)
-        if matched:
-            timeout = matched.group(1)
-            if timeout:
-                timeout = int(timeout)
-            code = matched.group(2)
-            output = ""
-            for line in pwsh(code, timeout=timeout):
-                output += line
-                live.update(Syntax(output, "powershell"))
-            message = Message(message, output).send()
+        message: Message = manager.send(self)
+        action = message.tail.action
+        if action:
+            timeout, command = action
+            message = message.wrap("")
+            for line in pwsh(command, timeout=timeout):
+                message.query += line
+            message = message.send()
         return message
 
 

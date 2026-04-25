@@ -43,6 +43,9 @@ Each round includes at most one call, use:
 - `timeout` is optional but recommended for commands that might hang (e.g., network calls).
 - Command can span multiple lines.
 
+Example:
+<shell timeout=5> Get-ChildItem -Recurse </shell>
+
 - The interaction will proceed automatically, all you need is to wait for results.
 - After it returns, you can make further call to figure things out.
 
@@ -54,7 +57,7 @@ Once you get enough information, make response to the user.
 - Don’t just retry the same command without modification.
 - If you failed repeatedly, report the error clearly.
 
-## User Environment
+## 7. User Environment
 
 - System: Windows 11 25H2 (64-bit)
 - Shell: PowerShell 7.6.1

@@ -1,6 +1,7 @@
 from constants import Endpoints, AREA_CODE, HEADERS, TIMEOUT, EXPIRE
 from encrypt import Hasher, Roam, encrypt, time
 from requests import Session, Response as R
+from parts import Response, Search, Think
 from json import dumps, loads
 
 
@@ -156,22 +157,6 @@ class Guard:
         self.handler(response)
 
 
-class Think:
-    def __init__(self, content: str):
-        self.content = content
-
-    def update(self, chunk: str):
-        self.content += chunk
-
-
-class Search:
-    def __init__(self, queries: list[str]):
-        self.queries = queries
-
-
-class Response(Think): ...
-
-
 class Completion:
     def __init__(self, previous: "Completion | str", query: str):
         self.parts: list[Part] = []
@@ -185,15 +170,15 @@ class Completion:
         return self.parts[-1]
 
     def update(self, chunk: str):
-        self.tail.update(chunk)
+        return self.tail.update(chunk)
 
     def __str__(self):
-        prepared = [str(self.previous)]
-        prepared.append("<｜User｜>" + self.query)
-        prepared.append("<｜Assistant｜>")
+        prepared = str(self.previous)
+        prepared += "<｜User｜>" + self.query + "\n"
+        prepared += "<｜Assistant｜>"
         if self.parts:
-            prepared.append(self.tail.content)
-        return "\n".join(prepared)
+            prepared += self.tail.content + "\n"
+        return prepared
 
 
 class Manager:
