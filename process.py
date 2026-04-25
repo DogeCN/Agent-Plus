@@ -49,6 +49,7 @@ def pwsh(code: str, timeout: int):
 
     handler = Thread(target=wait, daemon=True)
     handler.start()
+    yield "[Process Started]\n"
     for line in process.stdout:
         yield line.decode()
 

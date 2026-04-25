@@ -190,8 +190,9 @@ class Completion:
     def __str__(self):
         prepared = [str(self.previous)]
         prepared.append("<｜User｜>" + self.query)
+        prepared.append("<｜Assistant｜>")
         if self.parts:
-            prepared.append("<｜Assistant｜>" + self.tail.content)
+            prepared.append(self.tail.content)
         return "\n".join(prepared)
 
 
