@@ -173,18 +173,42 @@ class Response(Think): ...
 
 
 class Completion:
-    def __init__(self, query: str):
-        self.query = query
+    def __init__(self, previous: "Completion | str", query: str):
         self.parts: list[Part] = []
+        if isinstance(previous, str):
+            previous = "<｜System｜>" + previous
+        self.previous = previous
+        self.query = query
+
+    @property
+    def tail(self):
+        return self.parts[-1]
 
     def update(self, chunk: str):
-        self.parts[-1].update(chunk)
+        self.tail.update(chunk)
+
+    def __str__(self):
+        prepared = [str(self.previous)]
+        prepared.append("<｜User｜>" + self.query)
+        if self.parts:
+            prepared.append("<｜Assistant｜>" + self.tail.content)
+        return "\n".join(prepared)
 
 
 class Manager:
     model = "default"
     thinking = False
     search = False
+
+    def __init__(self):
+        self.tunnels: list[Tunnel] = []
+        self.index = 0
+
+    def send(self, completion: Completion):
+        current = self.tunnels[self.index]
+        self.index = (self.index + 1) % len(self.tunnels)
+        current.send(completion, self.model, self.thinking, self.search)
+        return completion
 
 
 type Part = Think | Search | Response
@@ -217,7 +241,9 @@ class Tunnel:
     def send(
         self,
         completion: Completion,
-        manager: Manager,
+        model: str,
+        thinking: bool,
+        search: bool,
         file_ids: list = [],
     ):
         with Guard(self.session, self.handler) as g:
@@ -226,11 +252,11 @@ class Tunnel:
                 json={
                     "chat_session_id": g.id,
                     "parent_message_id": None,
-                    "model_type": manager.model,
-                    "prompt": completion.query,
+                    "model_type": model,
+                    "prompt": str(completion),
                     "ref_file_ids": file_ids,
-                    "thinking_enabled": manager.thinking,
-                    "search_enabled": manager.search,
+                    "thinking_enabled": thinking,
+                    "search_enabled": search,
                     "preempt": False,
                 },
                 headers={
@@ -270,8 +296,8 @@ class Tunnel:
                                         c = data["response"]["fragments"][0]["content"]
                                         if t in mapping:
                                             part = mapping[t](c)
-                                    elif i == 2 and t in mapping:
-                                        part = mapping[t](data)
+                                    elif i == 2 and t == "RESPONSE":
+                                        part = Response(data[0]["content"])
                                     completion.parts.append(part)
                             elif isinstance(data, str) and data != "FINISHED":
                                 completion.update(data)
