@@ -19,6 +19,9 @@ class Message(Completion):
     def update(self, chunk: str):
         super().update(chunk)
         live.update(Text(str(self)), refresh=True)
+        tail = self.tail
+        if isinstance(tail, Response) and search(pattern, tail.content):
+            return True
 
     def wrap(self, query: str):
         return Message(self, query)

@@ -301,4 +301,5 @@ class Tunnel:
                                         part = Response(data[0]["content"])
                                     completion.parts.append(part)
                             elif isinstance(data, str) and data != "FINISHED":
-                                completion.update(data)
+                                if completion.update(data):
+                                    break
