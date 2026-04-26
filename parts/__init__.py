@@ -20,10 +20,11 @@ class Response(Think):
     def __init__(self, content: str):
         super().__init__(content)
         self.parser = Parser()
+        for c in content:
+            self.parser.update(c)
 
     def update(self, chunk: str):
         super().update(chunk)
         for c in chunk:
             if self.parser.update(c):
                 self.action = self.parser.get()
-                return True

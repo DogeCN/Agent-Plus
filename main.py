@@ -13,9 +13,10 @@ class Message(Completion):
     type T = Message
 
     def update(self, chunk: str):
-        res = super().update(chunk)
+        super().update(chunk)
         live.update(Text(str(self)), refresh=True)
-        return res
+        if isinstance(self.tail, Response) and self.tail.action:
+            return True
 
     def wrap(self, query: str):
         return Message(self, query)
@@ -26,7 +27,7 @@ class Message(Completion):
         if action:
             timeout, command = action
             message = message.wrap("")
-            for line in pwsh(command, timeout=timeout):
+            for line in pwsh(command, timeout):
                 message.query += line
             message = message.send()
         return message

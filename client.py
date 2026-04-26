@@ -170,7 +170,7 @@ class Completion:
         return self.parts[-1]
 
     def update(self, chunk: str):
-        return self.tail.update(chunk)
+        self.tail.update(chunk)
 
     def __str__(self):
         prepared = str(self.previous)
