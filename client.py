@@ -1,7 +1,6 @@
 from constants import Endpoints, AREA_CODE, HEADERS, TIMEOUT, EXPIRE
 from encrypt import Hasher, Roam, encrypt, time
 from requests import Session, Response as R
-from parts import Response, Search, Think
 from json import dumps, loads
 
 
@@ -157,6 +156,29 @@ class Guard:
         self.handler(response)
 
 
+class Search:
+    def __init__(self, queries: list[str]):
+        self.queries = queries
+
+
+class Think:
+    def __init__(self, content: str):
+        self.content = content
+
+    def update(self, chunk: str):
+        self.content += chunk
+
+
+class Response(Think):
+    action = None
+
+    def __init__(self, content: str):
+        super().__init__(content)
+
+    def update(self, chunk: str):
+        super().update(chunk)
+
+
 class Completion:
     def __init__(self, previous: "Completion | str", query: str):
         self.parts: list[Part] = []
@@ -177,11 +199,15 @@ class Completion:
         prepared += "<｜User｜>" + self.query + "\n"
         prepared += "<｜Assistant｜>"
         if self.parts:
-            prepared += self.tail.content + "\n"
+            prepared += self.tail.content + "<｜end▁of▁sentence｜>\n"
         return prepared
 
 
+type Part = Think | Search | Response
+
+
 class Manager:
+    mapping: dict[str, type[Part]] = ...
     model = "default"
     thinking = False
     search = False
@@ -193,12 +219,8 @@ class Manager:
     def send(self, completion: Completion):
         current = self.tunnels[self.index]
         self.index = (self.index + 1) % len(self.tunnels)
-        current.send(completion, self.model, self.thinking, self.search)
+        current.send(completion, self)
         return completion
-
-
-type Part = Think | Search | Response
-mapping = {"THINK": Think, "RESPONSE": Response}
 
 
 class Tunnel:
@@ -227,9 +249,7 @@ class Tunnel:
     def send(
         self,
         completion: Completion,
-        model: str,
-        thinking: bool,
-        search: bool,
+        manager: Manager,
         file_ids: list = [],
     ):
         with Guard(self.session, self.handler) as g:
@@ -238,11 +258,11 @@ class Tunnel:
                 json={
                     "chat_session_id": g.id,
                     "parent_message_id": None,
-                    "model_type": model,
+                    "model_type": manager.model,
                     "prompt": str(completion),
                     "ref_file_ids": file_ids,
-                    "thinking_enabled": thinking,
-                    "search_enabled": search,
+                    "thinking_enabled": manager.thinking,
+                    "search_enabled": manager.search,
                     "preempt": False,
                 },
                 headers={
@@ -273,17 +293,17 @@ class Tunnel:
                                     i, t = res
                                     if i == 0:
                                         c = data[0]["v"]
-                                        if t in mapping:
-                                            part = mapping[t](c[0]["content"])
+                                        if t in manager.mapping:
+                                            part = manager.mapping[t](c[0]["content"])
                                         elif t == "TOOL_SEARCH":
                                             q = [v["queries"][0]["query"] for v in c]
                                             part = Search(q)
                                     elif i == 1:
                                         c = data["response"]["fragments"][0]["content"]
-                                        if t in mapping:
-                                            part = mapping[t](c)
+                                        if t in manager.mapping:
+                                            part = manager.mapping[t](c)
                                     elif i == 2 and t == "RESPONSE":
-                                        part = Response(data[0]["content"])
+                                        part = manager.mapping[t](c)
                                     completion.parts.append(part)
                             elif isinstance(data, str) and data != "FINISHED":
                                 if completion.update(data):

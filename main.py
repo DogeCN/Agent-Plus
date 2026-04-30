@@ -183,14 +183,4 @@ for role, msg in messages:
     item.content = msg
     stack.append(item)
 
-button = ttk.Button(main, text="Add")
-button.grid(row=1, column=0, padx=10, sticky=tk.NSEW)
-
-
-def add():
-    item.text += "\nLAST"
-
-
-button.config(command=add)
-
 root.mainloop()
