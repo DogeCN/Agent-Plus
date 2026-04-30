@@ -39,9 +39,10 @@ class AbstractItem:
         self.title = title
         self.content = ""
 
-    def update(self):
-        for parent in self.parents:
-            parent.update(self)
+    def update(self, source=None):
+        for parent in list(self.parents):
+            if parent != source:
+                parent.update(self)
 
     def __str__(self) -> str: ...
 
@@ -60,20 +61,19 @@ class Content(tk.Text, AbstractParent):
         if self.child:
             self.child.content = self.get("1.0", "end-1c")
             self.edit_modified(False)
-            # self.child.parents.remove(self)
-            # self.child.update()
-            # self.child.parents.append(self)
+            self.child.update(self)
 
     def update(self, item: AbstractItem):
         if self.child:
             self.child.parents.remove(self)
-        self.child = item
         self.delete("1.0", tk.END)
         self.insert(tk.END, str(item))
+        self.child = item
         item.parents.append(self)
 
     def destroy(self):
-        self.child.parents.remove(self)
+        if self.child:
+            self.child.parents.remove(self)
         tk.Text.destroy(self)
 
 
