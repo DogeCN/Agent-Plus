@@ -60,12 +60,12 @@ class Content(tk.Text, AbstractParent):
     def edited(self, *_):
         if self.child:
             self.child.content = self.get("1.0", "end-1c")
-            self.edit_modified(False)
             self.child.update(self)
 
     def update(self, item: AbstractItem):
         if self.child:
             self.child.parents.remove(self)
+        self.child = None
         self.delete("1.0", tk.END)
         self.insert(tk.END, str(item))
         self.child = item
@@ -139,11 +139,14 @@ class Stack(tk.Listbox, list[AbstractItem], AbstractParent):
         return list.__getitem__(self, index)
 
     def __setitem__(self, index, item: AbstractItem):
-        self.delete(index)
-        self.insert(index, item.title)
-        self[index].parents.remove(self)
-        list.__setitem__(self, index, item)
-        item.parents.append(self)
+        if self.get(index) != item.title:
+            self.delete(index)
+            self.insert(index, item.title)
+        pre = self[index]
+        if pre != item:
+            pre.parents.remove(self)
+            list.__setitem__(self, index, item)
+            item.parents.append(self)
 
     def __delitem__(self, index):
         self.delete(index)
