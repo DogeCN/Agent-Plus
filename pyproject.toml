@@ -2,17 +2,13 @@
 name = "Agent-Plus"
 version = "0.1.0"
 description = "Default template for PDM package"
-authors = [{ name = "DogeCN", email = "hark2009lbf@outlook.com" }]
-dependencies = [
-    "openvino>=2026.1.0",
-    "numpy>=2.4.4",
-    "wasmtime>=43.0.0",
-    "rich>=14.3.3",
-    "requests>=2.33.1",
+authors = [
+    {name = "DogeCN", email = "hark2009lbf@outlook.com"},
 ]
+dependencies = ["requests>=2.33.1", "customtkinter>=5.2.2"]
 requires-python = "==3.13.*"
 readme = "README.md"
-license = { text = "MIT" }
+license = {text = "MIT"}
 
 
 [tool.pdm]

@@ -2,6 +2,8 @@ from subprocess import Popen, TimeoutExpired, PIPE, STDOUT
 from threading import Thread
 from time import time
 
+template = ". D:\\Agent\\session.ps1; Restore-Session; try { %s } catch { $_ | Write-Error }; Save-Session\n\n"
+
 
 def format(secs: float) -> str:
     units = [
@@ -25,13 +27,21 @@ def format(secs: float) -> str:
 
 def pwsh(code: str, timeout: int):
     process = Popen(
-        ["pwsh", "-NoProfile", "-Command", "-"],
+        [
+            "pwsh",
+            "-NoProfile",
+            "-NoLogo",
+            "-NonInteractive",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-Command",
+            "-",
+        ],
         stdin=PIPE,
         stdout=PIPE,
         stderr=STDOUT,
     )
-    process.stdin.write(b"[Console]::OutputEncoding = [System.Text.Encoding]::UTF8\n")
-    process.stdin.write(code.encode())
+    process.stdin.write((template % code).encode())
     process.stdin.close()
 
     hint = ""
