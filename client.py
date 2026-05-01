@@ -156,57 +156,63 @@ class Guard:
         self.handler(response)
 
 
-class Search:
-    def __init__(self, queries: list[str]):
-        self.queries = queries
-
-
-class Think:
+class Container:
     def __init__(self, content: str):
         self.content = content
 
+    def __str__(self):
+        return self.content.strip()
+
+
+class System(Container):
+    def __str__(self):
+        return "<｜System｜>" + super().__str__()
+
+
+class User(System):
+    def __str__(self):
+        return "<｜User｜>" + Container.__str__(self)
+
+
+class Think(Container):
     def update(self, chunk: str):
         self.content += chunk
 
 
-class Response(Think):
-    action = None
-
-    def __init__(self, content: str):
-        super().__init__(content)
-
-    def update(self, chunk: str):
-        super().update(chunk)
-
-
-class Completion:
-    def __init__(self, previous: "Completion | str", query: str):
-        self.parts: list[Part] = []
-        if isinstance(previous, str):
-            previous = "<｜System｜>" + previous
-        self.previous = previous
-        self.query = query
-
-    @property
-    def tail(self):
-        return self.parts[-1]
-
-    def update(self, chunk: str):
-        self.tail.update(chunk)
+class Search:
+    def __init__(self, queries: list[str]):
+        self.queries = queries
 
     def __str__(self):
-        prepared = str(self.previous)
-        prepared += "<｜User｜>" + self.query + "\n"
-        prepared += "<｜Assistant｜>"
-        if self.parts:
-            prepared += self.tail.content + "<｜end▁of▁sentence｜>\n"
-        return prepared
+        return "\n".join(self.queries)
+
+
+class Response(Think):
+    actions = None
 
 
 type Part = Think | Search | Response
 
 
-class Manager:
+class Assistant(list[Part]):
+    actions = None
+
+    def __init__(self, prompt: str):
+        super().__init__()
+        self.prompt = prompt
+
+    def update(self, chunk: str):
+        self[-1].update(chunk)
+
+    def __str__(self):
+        responses = [str(part) for part in self if isinstance(part, Response)]
+        return "<｜Assistant｜>" + "\n".join(responses) + "<｜end▁of▁sentence｜>"
+
+
+type Message = System | User | Assistant
+
+
+class Manager(list[Message]):
     mapping: dict[str, type[Part]] = ...
     model = "default"
     thinking = False
@@ -214,13 +220,18 @@ class Manager:
 
     def __init__(self):
         self.tunnels: list[Tunnel] = []
-        self.index = 0
+        self.current = 0
 
-    def send(self, completion: Completion):
-        current = self.tunnels[self.index]
-        self.index = (self.index + 1) % len(self.tunnels)
-        current.send(completion, self)
-        return completion
+    def send(self):
+        for _ in range(len(self.tunnels)):
+            tunnel = self.tunnels[self.current]
+            try:
+                self.append(Assistant("\n".join(map(str, self))))
+                tunnel.send(self)
+                return
+            finally:
+                self.current = (self.current + 1) % len(self.tunnels)
+        raise Exception("Completion failed")
 
 
 class Tunnel:
@@ -248,18 +259,18 @@ class Tunnel:
 
     def send(
         self,
-        completion: Completion,
         manager: Manager,
         file_ids: list = [],
     ):
         with Guard(self.session, self.handler) as g:
+            message: Assistant = manager[-1]
             response = self.session.post(
                 Endpoints.COMPLETION,
                 json={
                     "chat_session_id": g.id,
                     "parent_message_id": None,
                     "model_type": manager.model,
-                    "prompt": str(completion),
+                    "prompt": message.prompt,
                     "ref_file_ids": file_ids,
                     "thinking_enabled": manager.thinking,
                     "search_enabled": manager.search,
@@ -288,6 +299,7 @@ class Tunnel:
                                     (0, "v", 0, "type"),
                                     ("response", "fragments", 0, "type"),
                                     (0, "type"),
+                                    (1, "v", 0, "type"),
                                 )
                                 if res:
                                     i, t = res
@@ -304,7 +316,8 @@ class Tunnel:
                                             part = manager.mapping[t](c)
                                     elif i == 2 and t == "RESPONSE":
                                         part = manager.mapping[t](c)
-                                    completion.parts.append(part)
+                                    elif i == 3:
+                                        print(t)
+                                    message.append(part)
                             elif isinstance(data, str) and data != "FINISHED":
-                                if completion.update(data):
-                                    break
+                                message.update(data)

@@ -37,19 +37,27 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ## 5. Shell Call Format
 
-Each round includes at most one call, use:
-<shell timeout={seconds}> {command} </shell>
+Each round includes at most one call. Use a TOML code block to specify the shell command and optional timeout:
 
-- `timeout` is optional but recommended for commands that might hang (e.g., network calls).
-- Command can span multiple lines.
+```toml
+[shell]
+timeout = 5      # optional, recommended for commands that might hang (e.g., network calls)
+command = "Get-ChildItem -Recurse"
+```
+
+- The `timeout` field is optional. If omitted, no timeout is enforced.
+- The `command` field is a string containing the full shell command. It can be multi-line using TOML triple-quoted strings if needed.
 
 Example:
-<shell timeout=5> Get-ChildItem -Recurse </shell>
+```toml
+[shell]
+timeout = 5
+command = """
+Get-ChildItem -Recurse
+"""
+```
 
-- The interaction will proceed automatically, all you need is to wait for results.
-- After it returns, you can make further call to figure things out.
-
-Once you get enough information, make response to the user.
+After the shell returns, you can make further calls to figure things out. Once you get enough information, make a response to the user.
 
 ## 6. Error Handling
 
