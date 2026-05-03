@@ -216,34 +216,30 @@ class Tunnel:
 
     def parse(self, message: Assistant, data: dict):
         if data:
-            value = data.get("v")
-            if isinstance(value, list):
-                for item in value:
+            v = data.get("v")
+            if isinstance(v, list):
+                for item in v:
                     self.parse(message, item)
-            elif isinstance(value, dict):
-                self.parse(message, value["response"]["fragments"][0])
-            elif isinstance(value, str):
-                position = data.get("p")
-                if not position or "/content" in position:
-                    message.update(value)
+            elif isinstance(v, dict):
+                self.parse(message, v["response"]["fragments"][0])
+            elif isinstance(v, str):
+                p = data.get("p")
+                if not p or "/content" in p:
+                    message.update(v)
             elif "type" in data:
-                type = data["type"]
-                if type == "TOOL_OPEN":
-                    id: int = data["id"]
+                t = data["type"]
+                content = data.get("content")
+                if t == "TOOL_OPEN":
+                    id = data["id"]
                     result = self.cached.get(id)
                     if result:
                         link = f"[{result.get('title', '')}]({result.get('url', '')})"
                         message.link(id, link)
                     elif "result" in data:
                         self.cached[id] = data["result"]
-                else:
-                    queries = data.get("queries")
-                    if type == "TOOL_SEARCH":
-                        if queries:
-                            message.append(Query(queries))
-                    else:
-                        content = data["content"]
-                        if type == "THINK":
-                            message.append(Think(content))
-                        elif type == "RESPONSE":
-                            message.append(Response(content))
+                elif t == "TOOL_SEARCH" and "queries" in data:
+                    message.append(Query(data["queries"]))
+                elif t == "THINK" and content:
+                    message.append(Think(content))
+                elif t == "RESPONSE" and content:
+                    message.append(Response(content))
