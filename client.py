@@ -1,6 +1,7 @@
 from constants import Endpoints, AREA_CODE, HEADERS, TIMEOUT, EXPIRE
+from abstract import Messages, Assistant, Think, Query, Response
+from requests import Session, RequestException, Response as R
 from encrypt import Hasher, Roam, encrypt, time
-from requests import Session, Response as R
 from json import dumps, loads
 
 
@@ -40,11 +41,11 @@ class Tokener(list):
 
 
 class Result:
-    def __init__(self, response: R, token: Token):
+    def __init__(self, response: R, token: Token | None = None):
         assert response.status_code == 200
         self.result = response.json()
         code = self.result["code"]
-        if code == 40003:
+        if code == 40003 and token in tokener:
             tokener.remove(token)
         assert code == 0, self.result["msg"]
 
@@ -58,7 +59,7 @@ class Handler:
         self._token = token
 
     def __call__(self, response: R):
-        return Result(response, self.token)
+        return Result(response, self._token)
 
     @property
     def token(self):
@@ -89,11 +90,9 @@ class Client:
                         headers={"Content-Type": "application/json"},
                         timeout=TIMEOUT,
                     )
-                    self.token = tokener.new(
-                        Result(response, self.token).data["user"]["token"]
-                    )
+                    self.token = tokener.new(Result(response).data["user"]["token"])
                     return
-                except:
+                except (RequestException, TypeError, KeyError):
                     pass
         raise Exception("Login failed")
 
@@ -103,30 +102,6 @@ class Client:
 
 tokener = Tokener()
 hasher = Hasher()
-
-
-def probe(data: dict, bound: tuple):
-    if bound:
-        key = bound[0]
-        if key is None:
-            results = []
-            for v in list(data):
-                res = probe(v, bound[1:])
-                if res is not None:
-                    results.append(res)
-            return results
-        try:
-            return probe(data[key], bound[1:])
-        except (KeyError, IndexError, TypeError):
-            return
-    return data
-
-
-def multiprobe(data: dict, *bounds: tuple):
-    for i, bound in enumerate(bounds):
-        result = probe(data, bound)
-        if result is not None:
-            return i, result
 
 
 class Guard:
@@ -156,79 +131,22 @@ class Guard:
         self.handler(response)
 
 
-class Container:
-    def __init__(self, content: str):
-        self.content = content
-
-    def __str__(self):
-        return self.content.strip()
-
-
-class System(Container):
-    def __str__(self):
-        return "<｜System｜>" + super().__str__()
-
-
-class User(System):
-    def __str__(self):
-        return "<｜User｜>" + Container.__str__(self)
-
-
-class Think(Container):
-    def update(self, chunk: str):
-        self.content += chunk
-
-
-class Search:
-    def __init__(self, queries: list[str]):
-        self.queries = queries
-
-    def __str__(self):
-        return "\n".join(self.queries)
-
-
-class Response(Think):
-    actions = None
-
-
-type Part = Think | Search | Response
-
-
-class Assistant(list[Part]):
-    actions = None
-
-    def __init__(self, prompt: str):
-        super().__init__()
-        self.prompt = prompt
-
-    def update(self, chunk: str):
-        self[-1].update(chunk)
-
-    def __str__(self):
-        responses = [str(part) for part in self if isinstance(part, Response)]
-        return "<｜Assistant｜>" + "\n".join(responses) + "<｜end▁of▁sentence｜>"
-
-
-type Message = System | User | Assistant
-
-
-class Manager(list[Message]):
-    mapping: dict[str, type[Part]] = ...
-    model = "default"
-    thinking = False
-    search = False
-
+class Manager(Messages):
     def __init__(self):
+        super().__init__()
         self.tunnels: list[Tunnel] = []
         self.current = 0
+        self.model = "default"
+        self.thinking = False
+        self.search = False
+
+    def bind(self, client: Client):
+        self.tunnels.append(client.new())
 
     def send(self):
         for _ in range(len(self.tunnels)):
-            tunnel = self.tunnels[self.current]
             try:
-                self.append(Assistant("\n".join(map(str, self))))
-                tunnel.send(self)
-                return
+                return self.tunnels[self.current].send(self)
             finally:
                 self.current = (self.current + 1) % len(self.tunnels)
         raise Exception("Completion failed")
@@ -238,6 +156,7 @@ class Tunnel:
     def __init__(self, session: Session, handler: Handler):
         self.handler = handler
         self.session = session
+        self.cached: dict[int, dict] = {}
 
     def challenge(self, endpoint: str):
         response = self.session.post(
@@ -263,14 +182,13 @@ class Tunnel:
         file_ids: list = [],
     ):
         with Guard(self.session, self.handler) as g:
-            message: Assistant = manager[-1]
             response = self.session.post(
                 Endpoints.COMPLETION,
                 json={
                     "chat_session_id": g.id,
                     "parent_message_id": None,
                     "model_type": manager.model,
-                    "prompt": message.prompt,
+                    "prompt": str(manager),
                     "ref_file_ids": file_ids,
                     "thinking_enabled": manager.thinking,
                     "search_enabled": manager.search,
@@ -286,38 +204,46 @@ class Tunnel:
                 stream=True,
             )
             assert response.status_code == 200
+            message = manager.new()
+            self.cached.clear()
             for chunk in response.iter_lines(chunk_size=None, decode_unicode=True):
                 chunk = str(chunk).strip()
-                if " " in chunk:
-                    if chunk.startswith("data: "):
-                        data = loads(chunk[6:])
-                        if "v" in data:
-                            data = data["v"]
-                            if isinstance(data, list | dict):
-                                res = multiprobe(
-                                    data,
-                                    (0, "v", 0, "type"),
-                                    ("response", "fragments", 0, "type"),
-                                    (0, "type"),
-                                    (1, "v", 0, "type"),
-                                )
-                                if res:
-                                    i, t = res
-                                    if i == 0:
-                                        c = data[0]["v"]
-                                        if t in manager.mapping:
-                                            part = manager.mapping[t](c[0]["content"])
-                                        elif t == "TOOL_SEARCH":
-                                            q = [v["queries"][0]["query"] for v in c]
-                                            part = Search(q)
-                                    elif i == 1:
-                                        c = data["response"]["fragments"][0]["content"]
-                                        if t in manager.mapping:
-                                            part = manager.mapping[t](c)
-                                    elif i == 2 and t == "RESPONSE":
-                                        part = manager.mapping[t](c)
-                                    elif i == 3:
-                                        print(t)
-                                    message.append(part)
-                            elif isinstance(data, str) and data != "FINISHED":
-                                message.update(data)
+                if chunk.startswith("data: "):
+                    data = loads(chunk[6:])
+                    self.parse(message, data)
+            message.stop()
+            return message
+
+    def parse(self, message: Assistant, data: dict):
+        if data:
+            value = data.get("v")
+            if isinstance(value, list):
+                for item in value:
+                    self.parse(message, item)
+            elif isinstance(value, dict):
+                self.parse(message, value["response"]["fragments"][0])
+            elif isinstance(value, str):
+                position = data.get("p")
+                if not position or "/content" in position:
+                    message.update(value)
+            elif "type" in data:
+                type = data["type"]
+                if type == "TOOL_OPEN":
+                    id: int = data["id"]
+                    result = self.cached.get(id)
+                    if result:
+                        link = f"[{result.get('title', '')}]({result.get('url', '')})"
+                        message.link(id, link)
+                    elif "result" in data:
+                        self.cached[id] = data["result"]
+                else:
+                    queries = data.get("queries")
+                    if type == "TOOL_SEARCH":
+                        if queries:
+                            message.append(Query(queries))
+                    else:
+                        content = data["content"]
+                        if type == "THINK":
+                            message.append(Think(content))
+                        elif type == "RESPONSE":
+                            message.append(Response(content))
