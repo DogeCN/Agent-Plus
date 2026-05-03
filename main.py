@@ -1,13 +1,11 @@
 from abstract import Container, Content, User, System, Think, Response, Search
+from constants import TITLE, SIZE, SCALE, THEME
 from widgets import Context, Stack
 from client import Client, Manager
 from threading import Thread
 import tkinter as tk
 from tkinter import ttk, font
 from ctypes import windll
-
-GEOMETRY = (0.5, 0.6)
-TITLE = "Agent Plus"
 
 try:
     windll.shcore.SetProcessDpiAwareness(2)
@@ -17,18 +15,18 @@ root = tk.Tk()
 root.title(TITLE)
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
-width = int(screen_width * GEOMETRY[0])
-height = int(screen_height * GEOMETRY[1])
+width = int(screen_width * SIZE[0])
+height = int(screen_height * SIZE[1])
 root.geometry(f"{width}x{height}+{(screen_width-width)//2}+{(screen_height-height)//2}")
 scale = root.winfo_fpixels("1i") / 72
 root.tk.call("tk", "scaling", scale)
 tkfont = font.nametofont("TkDefaultFont")
-tkfont.configure(size=int(scale * 4))
+tkfont.configure(size=int(scale * SCALE))
 root.option_add("*Font", tkfont)
 root.grid_columnconfigure(0, weight=1)
 root.grid_rowconfigure(0, weight=1)
 style = ttk.Style()
-style.theme_use("vista")
+style.theme_use(THEME)
 
 main = tk.Frame(root)
 main.grid(row=0, column=0, padx=10, pady=10, sticky=tk.NSEW)
@@ -49,11 +47,10 @@ messages = Stack(main, stack)
 messages.grid(row=0, column=0, sticky=tk.NSEW)
 messages.default = {User.type: lambda: User(""), System.type: lambda: System("")}
 
-# messages.append(Container([Content("Hello, world!"), Content("...")]))
-# messages.append(System("You are a helpful assistant."))
-# messages.append(User("Hello, world!"))
-# messages.append(
-#     Container([Think("..."), Search(["A", "B", "C"]), Response("Hello, world!")])
-# )
+
+class Messages(Manager):
+    def __init__(self):
+        super().__init__(self)
+
 
 root.mainloop()

@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "DogeCN", email = "hark2009lbf@outlook.com"},
 ]
-dependencies = ["requests>=2.33.1", "customtkinter>=5.2.2", "wasmtime>=44.0.0"]
+dependencies = ["requests>=2.33.1", "wasmtime>=44.0.0"]
 requires-python = "==3.13.*"
 readme = "README.md"
 license = {text = "MIT"}

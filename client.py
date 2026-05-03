@@ -198,7 +198,7 @@ class Tunnel:
                     "Authorization": f"Bearer {self.handler.token}",
                     "Content-Type": "application/json",
                     "Cookie": Roam.cookie(),
-                    "X-Ds-Pow-Response": self.challenge(Endpoints.COMPLETION_EP),
+                    "X-Ds-Pow-Response": self.challenge(Endpoints.Referer.COMPLETION),
                 },
                 timeout=TIMEOUT,
                 stream=True,
@@ -233,7 +233,7 @@ class Tunnel:
                     id = data["id"]
                     result = self.cached.get(id)
                     if result:
-                        link = f"[{result.get('title', '')}]({result.get('url', '')})"
+                        link = f"[{result['title']}]({result['url']})"
                         message.link(id, link)
                     elif "result" in data:
                         self.cached[id] = data["result"]
