@@ -1,5 +1,5 @@
 from wasmtime import Engine, Store, Linker, Module, Instance
-from constants import WASM
+from config import WASM
 from base64 import b64encode
 from hashlib import sha256
 from struct import unpack

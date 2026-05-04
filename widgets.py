@@ -1,16 +1,18 @@
 from abstract import Parent, Container, Content
-from tkinter import Text, Listbox, Menu, Event, NORMAL, DISABLED, END
+from config import UI, MODELS, model, save
+from tkinter import ttk
+import tkinter as tk
 
 
-class Context(Text, Parent):
+class Context(tk.Text, Parent):
     def __init__(self, master, **kwargs):
-        super().__init__(master, **kwargs)
+        super().__init__(master, undo=True, **kwargs)
         self.bind("<<Modified>>", self.edited)
         self.child = None
 
     def edited(self, *_):
-        if self.child:
-            self.child._content = self.get("1.0", "end-1c")
+        if self.child and self.child.editable:
+            self.child.content = self.get("1.0", "end-1c")
             self.child.update(self)
             self.edit_modified(False)
 
@@ -24,51 +26,44 @@ class Context(Text, Parent):
 
     def update(self, item: Content):
         self.enable()
-        self.replace("1.0", END, item.content)
+        self.replace("1.0", tk.END, item.value)
         if not item.editable:
             self.disable()
-        self.see(END)
+        self.see(tk.END)
 
     def enable(self):
-        self.config(state=NORMAL)
+        self.config(state=tk.NORMAL)
 
     def disable(self):
-        self.config(state=DISABLED)
+        self.config(state=tk.DISABLED)
 
 
-class Stack(Listbox, list[Content], Parent):
+class Stack(tk.Listbox, Parent):
     def __init__(self, master, viewer: Parent, **kwargs):
-        Listbox.__init__(self, master, **kwargs)
-        list.__init__(self)
+        tk.Listbox.__init__(self, master, **kwargs)
         self.bind("<Button-1>", self._click)
         self.bind("<B1-Motion>", self._move)
         self.bind("<ButtonRelease-1>", self._release)
         self.bind("<Button-3>", self._menu)
+        self.menu = tk.Menu(self, tearoff=0)
+        self.container: Container[Content] = None
         self.viewer = viewer
         self.dragging = None
-        self.default = {}
 
-    def _menu(self, event: Event):
-        menu = Menu(self, tearoff=0)
+    def _menu(self, event: tk.Event):
         idx = self.nearest(event.y)
         if idx >= 0:
             self.select(idx)
-            menu.add_command(label="Delete", command=lambda: self.pop(idx))
-        elif self.default:
-            draft = Menu(self, tearoff=0)
-            for l, c in self.default.items():
-                draft.add_command(label=l, command=lambda c=c: self.append(c()))
-            menu.add_cascade(label="Draft", menu=draft)
-        menu.post(event.x_root, event.y_root)
+        self.menu.post(event.x_root, event.y_root)
 
-    def _click(self, event: Event):
+    def _click(self, event: tk.Event):
         idx = self.nearest(event.y)
         if idx >= 0:
             self.dragging = [False, idx, (event.x, event.y)]
             self.select(idx)
         return "break"
 
-    def _move(self, event: Event):
+    def _move(self, event: tk.Event):
         if self.dragging:
             if self.dragging[0]:
                 self.dragging[2] = (event.x, event.y)
@@ -85,56 +80,134 @@ class Stack(Listbox, list[Content], Parent):
                     self.dragging[0] = True
         return "break"
 
-    def _release(self, event: Event):
+    def _release(self, *_):
         self.dragging = None
         return "break"
 
     def select(self, idx: int):
-        self.selection_clear(0, END)
+        self.selection_clear(0, tk.END)
         self.selection_set(idx)
         self.viewer.view(self[idx])
 
     def update(self, item: Content):
         idx = self.index(item)
-        if self.title(idx) != item.title:
-            self.set(idx, item.title)
+        if self.title(idx) != item.type:
+            self.set(idx, item.type)
 
-    def view(self, item: Container[Content]):
-        while self:
-            self.pop(0)
-        for i in item:
-            self.append(i)
+    def view(self, container: Container[Content]):
+        if self.container:
+            tk.Listbox.delete(self, 0, tk.END)
+            for i in self.container:
+                if self in i.parents:
+                    i.parents.remove(self)
+            self.container.viewer = None
+        self.container = container
+        container.viewer = self
+        for i in self.container:
+            i.parents.append(self)
+            tk.Listbox.insert(self, tk.END, i.type)
+        self.tail()
 
     def insert(self, idx: int, item: Content):
-        Listbox.insert(self, idx, item.title)
+        tk.Listbox.insert(self, idx, item.type)
         item.parents.append(self)
-        list.insert(self, idx, item)
+        self.container.insert(idx, item)
 
     def append(self, item: Content):
-        self.insert(len(self), item)
+        self.insert(len(self.container), item)
 
     def pop(self, index=-1):
-        Listbox.delete(self, index)
+        tk.Listbox.delete(self, index)
         self[index].parents.remove(self)
-        return list.pop(self, index)
+        return self.container.pop(index)
+
+    def delete(self):
+        idx = self.curselection()
+        if idx:
+            self.pop(idx[0])
+        elif self.container:
+            self.pop()
 
     def index(self, item: Content) -> int:
-        return list.index(self, item)
+        return self.container.index(item)
 
     def __getitem__(self, index: int) -> Content:
-        return list.__getitem__(self, index)
+        return self.container[index]
 
     def title(self, index: int) -> str:
-        return Listbox.get(self, index)
+        return tk.Listbox.get(self, index)
 
     def set(self, index: int, title: str):
-        Listbox.delete(self, index)
-        Listbox.insert(self, index, title)
+        tk.Listbox.delete(self, index)
+        tk.Listbox.insert(self, index, title)
+
+    def tail(self):
+        tk.Listbox.see(self, tk.END)
+        if self.container:
+            self.select(-1)
 
     def nearest(self, y: int) -> int:
-        idx = Listbox.nearest(self, y)
+        idx = tk.Listbox.nearest(self, y)
         if 0 <= idx:
             bbox = self.bbox(idx)
             if bbox and bbox[1] <= y < bbox[1] + bbox[3]:
                 return idx
         return -1
+
+
+class Drafts(tk.Menu):
+    def __init__(self, master: Stack):
+        super().__init__(master, tearoff=0)
+        master.menu.add_cascade(label=UI.Menu.DRAFT, menu=self)
+        master.menu.add_command(label=UI.Menu.DELETE, command=self.delete)
+        self.stack = master
+
+    def append(self, c: type[Content], *args: object):
+
+        def draft(c=c, args=args):
+            self.stack.append(c(*args))
+            self.stack.tail()
+
+        self.add_command(label=c.type, command=draft)
+
+
+class Toolbar(tk.Frame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        self.model = model["model"]
+        self.thinking = model["thinking"]
+        self.search = model["search"]
+
+        self.modelBtn = tk.Button(self, text=self.model, command=self.next, width=15)
+        self.modelBtn.grid(row=0, column=0, padx=5, pady=5)
+
+        self.thinkingBtn = ttk.Checkbutton(
+            self, text="Thinking", command=self.toggleThinking
+        )
+        self.thinkingBtn.grid(row=1, column=0, padx=5, pady=5, sticky="w")
+        self.set(self.thinkingBtn, self.thinking)
+
+        self.searchBtn = ttk.Checkbutton(self, text="Search", command=self.toggleSearch)
+        self.searchBtn.grid(row=2, column=0, padx=5, pady=5, sticky="w")
+        self.set(self.searchBtn, self.search)
+
+    def next(self):
+        model["model"] = (model["model"] + 1) % len(MODELS)
+        self.model = MODELS[model["model"]]
+        self.modelBtn.config(text=self.model)
+        save()
+
+    def toggleThinking(self):
+        self.thinking = not self.thinking
+        model["thinking"] = self.thinking
+        self.set(self.thinkingBtn, self.thinking)
+        save()
+
+    def toggleSearch(self):
+        self.search = not self.search
+        model["search"] = self.search
+        self.set(self.searchBtn, self.search)
+        save()
+
+    def set(self, btn: ttk.Checkbutton, state: bool):
+        btn.state([("!" if state else "") + "selected"])

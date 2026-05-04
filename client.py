@@ -1,5 +1,5 @@
-from constants import Endpoints, AREA_CODE, HEADERS, TIMEOUT, EXPIRE
-from abstract import Messages, Assistant, Think, Query, Response
+from config import Endpoints, AREA_CODE, HEADERS, TIMEOUT, EXPIRE, MODELS, model
+from abstract import Messages, Assistant, Think, Search, Response
 from requests import Session, RequestException, Response as R
 from encrypt import Hasher, Roam, encrypt, time
 from json import dumps, loads
@@ -136,9 +136,6 @@ class Manager(Messages):
         super().__init__()
         self.tunnels: list[Tunnel] = []
         self.current = 0
-        self.model = "default"
-        self.thinking = False
-        self.search = False
 
     def bind(self, client: Client):
         self.tunnels.append(client.new())
@@ -187,11 +184,11 @@ class Tunnel:
                 json={
                     "chat_session_id": g.id,
                     "parent_message_id": None,
-                    "model_type": manager.model,
+                    "model_type": MODELS[model["model"]],
                     "prompt": str(manager),
                     "ref_file_ids": file_ids,
-                    "thinking_enabled": manager.thinking,
-                    "search_enabled": manager.search,
+                    "thinking_enabled": model["thinking"],
+                    "search_enabled": model["search"],
                     "preempt": False,
                 },
                 headers={
@@ -225,7 +222,7 @@ class Tunnel:
             elif isinstance(v, str):
                 p = data.get("p")
                 if not p or "/content" in p:
-                    message.update(v)
+                    message.stream(v)
             elif "type" in data:
                 t = data["type"]
                 content = data.get("content")
@@ -238,7 +235,8 @@ class Tunnel:
                     elif "result" in data:
                         self.cached[id] = data["result"]
                 elif t == "TOOL_SEARCH" and "queries" in data:
-                    message.append(Query(data["queries"]))
+                    queries = [q["query"] for q in data["queries"]]
+                    message.append(Search(queries))
                 elif t == "THINK" and content:
                     message.append(Think(content))
                 elif t == "RESPONSE" and content:
