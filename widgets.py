@@ -174,39 +174,33 @@ class Drafts(tk.Menu):
 class Toolbar(tk.Frame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
-        self.model = model["model"]
-        self.thinking = model["thinking"]
-        self.search = model["search"]
+        self.thinking = tk.BooleanVar(self, model["thinking"])
+        self.thinking.trace(tk.W, self.toggle)
+        self.search = tk.BooleanVar(self, model["search"])
+        self.search.trace(tk.W, self.toggle)
 
-        self.modelBtn = tk.Button(self, text=self.model, command=self.next, width=15)
+        self.modelBtn = tk.Button(self, text=self.name(), command=self.next, width=15)
         self.modelBtn.grid(row=0, column=0, padx=5, pady=5)
 
-        self.thinkingBtn = ttk.Checkbutton(
-            self, text="Thinking", command=self.toggleThinking
-        )
-        self.thinkingBtn.grid(row=1, column=0, padx=5, pady=5, sticky="w")
-        self.set(self.thinkingBtn, self.thinking)
+        self.tbutton = ttk.Checkbutton(self, text="Thinking", variable=self.thinking)
+        self.tbutton.grid(row=1, column=0, padx=5, pady=5, sticky="w")
+        self.set(self.tbutton, self.thinking.get())
 
-        self.searchBtn = ttk.Checkbutton(self, text="Search", command=self.toggleSearch)
-        self.searchBtn.grid(row=2, column=0, padx=5, pady=5, sticky="w")
-        self.set(self.searchBtn, self.search)
+        self.sbutton = ttk.Checkbutton(self, text="Search", variable=self.search)
+        self.sbutton.grid(row=2, column=0, padx=5, pady=5, sticky="w")
+        self.set(self.sbutton, self.search.get())
 
     def next(self):
         model["model"] = (model["model"] + 1) % len(MODELS)
-        self.model = MODELS[model["model"]]
-        self.modelBtn.config(text=self.model)
+        self.modelBtn.config(text=self.name())
         save()
 
-    def toggleThinking(self):
-        self.thinking = not self.thinking
-        model["thinking"] = self.thinking
-        self.set(self.thinkingBtn, self.thinking)
-        save()
+    def name(self):
+        return str(MODELS[model["model"]]).capitalize()
 
-    def toggleSearch(self):
-        self.search = not self.search
-        model["search"] = self.search
-        self.set(self.searchBtn, self.search)
+    def toggle(self, *_):
+        model["thinking"] = self.thinking.get()
+        model["search"] = self.search.get()
         save()
 
     def set(self, btn: ttk.Checkbutton, state: bool):

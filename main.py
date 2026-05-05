@@ -69,6 +69,9 @@ class Messages(Manager):
     def send(self):
         self.pool.submit(super().send)
 
+    def stop(self):
+        self.pool.shutdown(cancel_futures=True)
+
 
 messages = Messages(stack)
 
@@ -76,9 +79,9 @@ toolbar = Toolbar(main)
 toolbar.grid(row=0, column=3, padx=10, pady=10, sticky=tk.NSEW)
 
 send = ttk.Button(main, text=UI.Button.SEND, command=messages.send)
-send.grid(row=2, column=0, padx=10, pady=10, sticky=tk.NSEW)
+send.grid(row=1, column=3, padx=10, pady=10, sticky=tk.NSEW)
 
-stop = ttk.Button(main, text=UI.Button.STOP)
-stop.grid(row=2, column=1, padx=10, pady=10, sticky=tk.NSEW)
+stop = ttk.Button(main, text=UI.Button.STOP, command=messages.stop)
+stop.grid(row=2, column=3, padx=10, pady=10, sticky=tk.NSEW)
 
 root.mainloop()
