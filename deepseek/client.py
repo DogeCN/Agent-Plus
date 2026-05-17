@@ -1,8 +1,9 @@
-from config import Endpoints, AREA_CODE, HEADERS, TIMEOUT, EXPIRE, MODELS, model
-from abstract import Messages, Assistant, Think, Search, Response
 from requests import Session, RequestException, Response as R
-from encrypt import Hasher, Roam, encrypt, time
 from json import dumps, loads
+
+from .config import Endpoints, AREA_CODE, HEADERS, TIMEOUT, EXPIRE, MODELS, model
+from .encrypt import Hasher, Roam, encrypt, time
+from .abstract import DeepseekMessages
 
 
 class Token:
@@ -131,7 +132,7 @@ class Guard:
         self.handler(response)
 
 
-class Manager(Messages):
+class Manager(DeepseekMessages):
     def __init__(self):
         super().__init__()
         self.tunnels: list[Tunnel] = []
@@ -153,7 +154,6 @@ class Tunnel:
     def __init__(self, session: Session, handler: Handler):
         self.handler = handler
         self.session = session
-        self.cached: dict[int, dict] = {}
 
     def challenge(self, endpoint: str):
         response = self.session.post(
@@ -202,42 +202,10 @@ class Tunnel:
             )
             assert response.status_code == 200
             message = manager.new()
-            self.cached.clear()
             for chunk in response.iter_lines(chunk_size=None, decode_unicode=True):
                 chunk = str(chunk).strip()
                 if chunk.startswith("data: "):
                     data = loads(chunk[6:])
-                    self.parse(message, data)
-            message.stop()
+                    if message.parse(data):
+                        break
             return message
-
-    def parse(self, message: Assistant, data: dict):
-        if data:
-            v = data.get("v")
-            if isinstance(v, list):
-                for item in v:
-                    self.parse(message, item)
-            elif isinstance(v, dict):
-                self.parse(message, v["response"]["fragments"][0])
-            elif isinstance(v, str):
-                p = data.get("p")
-                if not p or "/content" in p:
-                    message.stream(v)
-            elif "type" in data:
-                t = data["type"]
-                content = data.get("content")
-                if t == "TOOL_OPEN":
-                    id = data["id"]
-                    result = self.cached.get(id)
-                    if result:
-                        link = f"[{result['title']}]({result['url']})"
-                        message.link(id, link)
-                    elif "result" in data:
-                        self.cached[id] = data["result"]
-                elif t == "TOOL_SEARCH" and "queries" in data:
-                    queries = [q["query"] for q in data["queries"]]
-                    message.append(Search(queries))
-                elif t == "THINK" and content:
-                    message.append(Think(content))
-                elif t == "RESPONSE" and content:
-                    message.append(Response(content))

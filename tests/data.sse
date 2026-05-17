@@ -1,0 +1,2359 @@
+event: ready
+data: {"request_message_id":1,"response_message_id":2,"model_type":"default"}
+
+event: update_session
+data: {"updated_at":1778948866.8703969}
+
+data: {"v":{"response":{"message_id":2,"parent_id":1,"model":"","role":"ASSISTANT","thinking_enabled":true,"ban_edit":false,"ban_regenerate":false,"status":"WIP","incomplete_message":null,"accumulated_token_usage":0,"feedback":null,"inserted_at":1778948866.862278,"search_enabled":true,"fragments":[{"id":2,"type":"THINK","content":"用户","elapsed_secs":null,"references":[],"stage_id":1}],"conversation_mode":"DEFAULT","has_pending_fragment":false,"auto_continue":false,"search_triggered":true}}}
+
+data: {"p":"response/conversation_mode","v":"DEEP_SEARCH"}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"要求"}
+
+data: {"v":"进行"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"测试"}
+
+data: {"v":"。"}
+
+data: {"v":"我需要"}
+
+data: {"v":"执行"}
+
+data: {"v":"一个"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"的"}
+
+data: {"v":"流程"}
+
+data: {"v":"。"}
+
+data: {"v":"首先"}
+
+data: {"v":"，"}
+
+data: {"v":"我需要"}
+
+data: {"v":"搜索"}
+
+data: {"v":"“"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"”"}
+
+data: {"v":"这个词"}
+
+data: {"v":"。"}
+
+data: {"v":"为了"}
+
+data: {"v":"全面"}
+
+data: {"v":"覆盖"}
+
+data: {"v":"，"}
+
+data: {"v":"我将"}
+
+data: {"v":"同时"}
+
+data: {"v":"进行"}
+
+data: {"v":"多项"}
+
+data: {"v":"搜索"}
+
+data: {"v":"，"}
+
+data: {"v":"涵盖"}
+
+data: {"v":"不同"}
+
+data: {"v":"关键词"}
+
+data: {"v":"和"}
+
+data: {"v":"可能的"}
+
+data: {"v":"来源"}
+
+data: {"v":"。"}
+
+data: {"p":"response/fragments/-1/elapsed_secs","o":"SET","v":2.002899955}
+
+data: {"p":"response/has_pending_fragment","v":true}
+
+data: {"p":"response","o":"BATCH","v":[{"p":"fragments","o":"APPEND","v":[{"id":3,"type":"TOOL_SEARCH","status":"WIP","content":null,"queries":[{"query":"多轮搜索 测试"},{"query":"多轮搜索 示例"},{"query":"multi-turn search test"},{"query":"多轮搜索 方法"},{"query":"多轮搜索 工具"}],"results":[],"stage_id":1}]},{"p":"has_pending_fragment","o":"SET","v":false}]}
+
+data: {"p":"response/fragments/-1/results","o":"SET","v":[{"url":"https://blog.gitcode.com/39065c1ee009e26c4ae75bcd8d4a66a1.html","title":"Lucene项目KNN图多线程搜索测试失败问题分析","snippet":"该测试用例主要验证K最近邻(KNN)图在多线程环境下的搜索功能 ... 多线程问题：测试用例在多线程环境下运行，这增加了结果的不确定性。当多个线程同时访问和修改图结构时，可能导致搜索路径的微小差异。","cite_index":null,"published_at":1751558400.0,"site_icon":"https://cdn.deepseek.com/site-icons/gitcode.com","site_name":"GitCode","query_indexes":[0]},{"url":"https://blog.gitcode.com/727701d6dfc814f205c61f6fe3785386.html","title":"Apache Lucene KNN图搜索多线程测试失败问题分析","snippet":"在Apache Lucene项目中，TestKnnGraph.testMultiThreadedSearch测试用例出现了随机性失败。该测试用例主要验证K最近邻(KNN)图搜索在多线程环境下的正确性。测试失败时 ... 多个搜索线程可能同时访问和修改图结构，这增加了实现的复杂性。","cite_index":null,"published_at":1750953600.0,"site_icon":"https://cdn.deepseek.com/site-icons/gitcode.com","site_name":"GitCode","query_indexes":[0]},{"url":"https://browse-export.arxiv.org/abs/2510.05137","title":"Demystifying deep search: a holistic evaluation with hint-free multi-hop questions and factorised metrics","snippet":"To address these issues, we present WebDetective, a benchmark of hint-free multi-hop questions paired with a controlled Wikipedia sandbox that ensures full traceability of model actions, and a holistic evaluation framework that separates search sufficiency, knowledge utilisation, and refusal behaviour.","cite_index":null,"published_at":1765296000.0,"site_icon":"https://cdn.deepseek.com/site-icons/arxiv.org","site_name":"arxiv.org","query_indexes":[0]},{"url":"https://help.aliyun.com/zh/open-search/industry-algorithm-edition/multiple-search","title":"多路搜索-智能开放搜索 OpenSearch(Open Search)-阿里云帮助中心","snippet":"多路搜索API允许在单次请求中并行发起最多N路独立的查询，并对各路召回的结果进行统一的排序和合并。可为每一路查询自定义召回数量、优先级，并对最终结果进行来源追溯，适用于需要融合文本、向量、不同索引或不同查询策略的复杂搜索场景。","cite_index":null,"published_at":1761580800.0,"site_icon":"https://cdn.deepseek.com/site-icons/aliyun.com","site_name":"阿里云文档中心","query_indexes":[0]},{"url":"https://cloud.tencent.cn/document/product/1772/115420","title":"知识引擎原子能力 多轮改写_腾讯云","snippet":"多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。","cite_index":null,"published_at":1757606400.0,"site_icon":"https://cdn.deepseek.com/site-icons/tencent.cn","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://meilisearch.com.cn/docs/learn/engine/concat#concatenated-queries","title":"连接和拆分查询","snippet":"拆分的词在搜索查询中不被视为多个词，因为它们必须保持彼此相邻。 ### 示例 搜索 newspaper 时，它会拆分为 news 和 paper，而不是 new 和 spaper。包含被其他词分隔的 news 和 paper 的文档与搜索无关。","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/meilisearch.com.cn","site_name":"meilisearch.com.cn","query_indexes":[0]},{"url":"https://www.alibabacloud.com/help/tc/open-search/industry-algorithm-edition/multimodal-search#topic-2129082","title":"電商行業模板-多路搜尋 - Alibaba Cloud","snippet":"OpenSearch的多路搜尋功能結合了文本搜尋和向量搜尋，做到了搜尋延遲和計算消耗低於OR邏輯情況下更高的準確性，並在搜題情境已經得到有效驗證。多路召回架構還可以使用到：圖片向量召回...","cite_index":null,"published_at":1776960000.0,"site_icon":"https://cdn.deepseek.com/site-icons/alibabacloud.com","site_name":"Alibaba Cloud","query_indexes":[0]},{"url":"https://www.meilisearch.com/blog/introducing-multi-search?utm_source=release-post&utm_id=cloud-announcement&utm_content=earch-as-a-service","title":"Introducing multi-index search","snippet":"We have introduced a/multi-search route that allows searching in multiple indexes with a single HTTP request. Suppose we have two indexes: movies and actors. Using the /multi-search endpoint, we can search for the name of an actress and retrieve both her biography and movies in the search results.","cite_index":null,"published_at":1756051200.0,"site_icon":"https://cdn.deepseek.com/site-icons/meilisearch.com","site_name":"Meilisearch","query_indexes":[0]},{"url":"https://www.algolia.com/old-docs/api-reference/api-methods/multiple-queries/?client=ruby","title":"Search multiple indices API reference | Algolia","snippet":"Perform a search on several indices at the same time, with one method call. ... - You want to target one index and send it multiple queries, where, for example, each query contains different settings or filters, or the query itself is slightly adjusted.","cite_index":null,"published_at":1758729600.0,"site_icon":"https://cdn.deepseek.com/site-icons/algolia.com","site_name":"Algolia","query_indexes":[0]},{"url":"https://arxiv.org/html/2602.23184","title":"MTRAG-UN: A Benchmark for Open Challenges in Multi-Turn RAG Conversations","snippet":"We present MTRAG-UN, a benchmark for exploring open challenges in multi-turn retrieval augmented generation, a popular use of large language models. ... In a multi-turn conversation, later turns can implicitly reference information in earlier turns. Such questions are considered non-standalone as they require the prior turns to be understood.","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/arxiv.org","site_name":"arXiv","query_indexes":[0]},{"url":"https://aitopics.org/doc/arxivorg:79999854","title":"AITopics | MTRAG: A Multi-Turn Conversational Benchmark for Evaluating Retrieval-Augmented Generation Systems","snippet":"We present MTRAG: an end-to-end human-generated multi-turn RAG benchmark that reflects several real-world properties across diverse dimensions for evaluating the full RAG pipeline. MTRAG contains 110 conversations averaging 7.7 turns","cite_index":null,"published_at":1736092800.0,"site_icon":"https://cdn.deepseek.com/site-icons/aitopics.org","site_name":"AITopics","query_indexes":[0]},{"url":"https://modelscope.cn/datasets/MiniMax/MR-NIAH/resolve/master/README.md","title":"","snippet":"Multi-Round Needles-In-A-Haystack (MR-NIAH) is an evaluation framework designed to assess long-context retrieval performance in large language models (LLMs). It serves as a crucial benchmark for retrieval tasks in long multi-turn dialogue contexts, revealing fundamental capabilities necessary for building lifelong companion AI assistants.","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/modelscope.cn","site_name":"ModelScope","query_indexes":[0]},{"url":"https://ar5iv.labs.arxiv.org/html/2510.16712","title":"The Chameleon Nature of LLMs: Quantifying Multi-Turn Stance Instability in Search-Enabled Language Models","snippet":"We present the first systematic investigation of \"chameleon behavior\" in LLMs: their alarming tendency to shift stances when presented with contradictory questions in multi-turn conversations (especially in search-enabled LLMs). ... Although prior research emphasizes single-turn accuracy, multi-turn stance consistency in search-enabled settings remains largely unexamined.","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/arxiv.org","site_name":"arXiv","query_indexes":[0]},{"url":"https://www.evalops.dev/docs/multi-turn-eval","title":"Docs — EvalOps","snippet":"Agents operate across multiple turns. A support agent clarifies, retrieves, and resolves over 3-8 turns. ... Multi-turn evaluation scores the full conversation thread: did the agent accomplish the task? Did it take a reasonable number of steps? Did it stay on topic and follow policy?","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/evalops.dev","site_name":"EvalOps","query_indexes":[0]},{"url":"https://llmdocs.deepchecks.com/docs/multi-turn-agent-demo-google-adk-academic-researcher","title":"Multi-Turn Agent Demo: Google ADK Academic Researcher - Deepchecks","snippet":"This demo walks through evaluating and debugging a multi-agent, multi-turn research assistant built on Google ADK. The application analyzes seminal academic papers, retrieves recent citing literature from the web, and proposes future research directions - and it does so across conversations that can span several back-and-forth turns with the user.","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/deepchecks.com","site_name":"Deepchecks","query_indexes":[0]},{"url":"https://deepwiki.com/CURRENTF/Sparse-vLLM/6.3-scbench-evaluation","title":"SCBench Evaluation | CURRENTF/Sparse-vLLM | DeepWiki","snippet":"1. Multi-Turn Evaluation In this mode, the model engages in a continuous conversation. Each subsequent turn includes the history of previous turns, testing the engine's ability to maintain and update the KV cache incrementally.","cite_index":null,"published_at":1775664000.0,"site_icon":"https://cdn.deepseek.com/site-icons/deepwiki.com","site_name":"DeepWiki","query_indexes":[0]},{"url":"https://cloud.baidu.com/doc/AIHC/s/am7j0h787","title":"快速部署联网搜索SearXNG插件","snippet":"联网搜索的实现方式 百舸联网搜索采用多轮搜索和AI Agent智能协同机制，实现精准的信息提取： - 第一步原始Query查询：基于用户的原始查询（Query），进行全网搜索，获取初步搜索结果。 - 第二步智能Query扩写：智能扩写Agent，对初始Query进行优化扩写，并再次执行全网搜索，获取更多结果。（可重复多次）","cite_index":null,"published_at":1763913600.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度智能云","query_indexes":[0]},{"url":"https://www.npmjs.com/package/agent-local-search","title":"agent-local-search","snippet":"传统方式需要多轮搜索、逐个打开链接。agent-search 一次并发搜索多个关键词，自动重排序返回最相关结果。 场景二：快速查阅资料 \"帮我看看最近关于 AI 编程有什么新闻？\"","cite_index":null,"published_at":1776268800.0,"site_icon":"https://cdn.deepseek.com/site-icons/npmjs.com","site_name":"NPM","query_indexes":[0]},{"url":"https://support.huaweicloud.com/usermanual-koosearch/koosearch_06_8015.html","title":"深度研究","snippet":"用户可以在前端页面上配置模型，进行任务规划的多轮交互式修改，并选择“研究报告”模式。系统后端将根据用户配置，执行任务规划与深度研究的逻辑，最终生成详细的大纲和研究报告。","cite_index":null,"published_at":1772985600.0,"site_icon":"https://cdn.deepseek.com/site-icons/huaweicloud.com","site_name":"华为云帮助中心","query_indexes":[0]},{"url":"https://rpahelpcenter.bazhuayu.com/helpcenter/docs/PpKkq8","title":"单网页多关键词搜索-Excel","snippet":"打开指定网页，启动Excel文件，读取Excel里所有关键词。每读取一个关键词就填写一次输入框，直到所有关键词都搜索完毕 ... 依次循环 Excel 中的每一个关键词，循环的 Excel 对象选择刚才创建的“搜索关键词”，并且把当前循环到的关键词命名为当前关键词。","cite_index":null,"published_at":1757606400.0,"site_icon":"https://cdn.deepseek.com/site-icons/bazhuayu.com","site_name":"八爪鱼采集器","query_indexes":[0]},{"url":"https://www.alibabacloud.com/help/en/open-search/industry-algorithm-edition/multiple-search-go","title":"Multi-path search - Alibaba Cloud","snippet":"Multi-path search runs up to N independent queries in parallel within a single request, then merges and uniformly ranks the results. Each query path can have its own retrieval count and priority, and you can trace which path contributed each result in the final output.","cite_index":null,"published_at":1774886400.0,"site_icon":"https://cdn.deepseek.com/site-icons/alibabacloud.com","site_name":"Alibaba Cloud","query_indexes":[0]},{"url":"https://pub.dev/packages/ddgs","title":"ddgs | Dart package","snippet":"A professional metasearch library that aggregates results from multiple web search engines including DuckDuckGo, Google, Bing, Brave, Ecosia, Qwant, and more. ... A professional metasearch library that aggregates results from multiple web search engines including DuckDuckGo, Google, Bing, Brave, and more.","cite_index":null,"published_at":1759939200.0,"site_icon":"https://cdn.deepseek.com/site-icons/pub.dev","site_name":"Dart packages","query_indexes":[0]},{"url":"https://www.npmjs.com/package/browser-web-search","title":"browser-web-search","snippet":"一行命令，搜遍全网 — 为 AI Agent 而生的多平台内容搜索工具 ... BWS 把 55 个主流平台的搜索接口封装成统一的命令行 API，让 Agent 直接拿到结构化 JSON，无需任何额外配置。","cite_index":null,"published_at":1777132800.0,"site_icon":"https://cdn.deepseek.com/site-icons/npmjs.com","site_name":"NPM","query_indexes":[0]}]}
+
+data: {"p":"response/fragments/-1/status","v":"FINISHED"}
+
+data: {"p":"response/has_pending_fragment","v":true}
+
+data: {"p":"response","o":"BATCH","v":[{"p":"fragments","o":"APPEND","v":[{"id":4,"type":"THINK","content":"搜索","elapsed_secs":null,"references":[],"stage_id":2}]},{"p":"has_pending_fragment","o":"SET","v":false}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"结果显示"}
+
+data: {"v":"了一些"}
+
+data: {"v":"相关内容"}
+
+data: {"v":"。"}
+
+data: {"v":"为了"}
+
+data: {"v":"更"}
+
+data: {"v":"全面地"}
+
+data: {"v":"覆盖"}
+
+data: {"v":"“"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"”"}
+
+data: {"v":"的不同"}
+
+data: {"v":"方面"}
+
+data: {"v":"，"}
+
+data: {"v":"我们需要"}
+
+data: {"v":"同时"}
+
+data: {"v":"打开"}
+
+data: {"v":"一些"}
+
+data: {"v":"可能"}
+
+data: {"v":"相关的"}
+
+data: {"v":"链接"}
+
+data: {"v":"。"}
+
+data: {"p":"response/fragments/-1/elapsed_secs","o":"SET","v":1.745977176}
+
+data: {"p":"response/has_pending_fragment","v":true}
+
+: 
+
+data: {"p":"response","o":"BATCH","v":[{"p":"fragments","o":"APPEND","v":[{"id":5,"type":"TOOL_OPEN","status":"WIP","result":{"url":"https://blog.gitcode.com/39065c1ee009e26c4ae75bcd8d4a66a1.html","title":"Lucene项目KNN图多线程搜索测试失败问题分析","snippet":"该测试用例主要验证K最近邻(KNN)图在多线程环境下的搜索功能 ... 多线程问题：测试用例在多线程环境下运行，这增加了结果的不确定性。当多个线程同时访问和修改图结构时，可能导致搜索路径的微小差异。","cite_index":null,"published_at":1751558400.0,"site_icon":"https://cdn.deepseek.com/site-icons/gitcode.com","site_name":"GitCode","query_indexes":[0]},"reference":{"id":3,"type":"TOOL_SEARCH"},"stage_id":2},{"id":6,"type":"TOOL_OPEN","status":"WIP","result":{"url":"https://browse-export.arxiv.org/abs/2510.05137","title":"Demystifying deep search: a holistic evaluation with hint-free multi-hop questions and factorised metrics","snippet":"To address these issues, we present WebDetective, a benchmark of hint-free multi-hop questions paired with a controlled Wikipedia sandbox that ensures full traceability of model actions, and a holistic evaluation framework that separates search sufficiency, knowledge utilisation, and refusal behaviour.","cite_index":null,"published_at":1765296000.0,"site_icon":"https://cdn.deepseek.com/site-icons/arxiv.org","site_name":"arxiv.org","query_indexes":[0]},"reference":{"id":3,"type":"TOOL_SEARCH"},"stage_id":2},{"id":7,"type":"TOOL_OPEN","status":"WIP","result":{"url":"https://help.aliyun.com/zh/open-search/industry-algorithm-edition/multiple-search","title":"多路搜索-智能开放搜索 OpenSearch(Open Search)-阿里云帮助中心","snippet":"多路搜索API允许在单次请求中并行发起最多N路独立的查询，并对各路召回的结果进行统一的排序和合并。可为每一路查询自定义召回数量、优先级，并对最终结果进行来源追溯，适用于需要融合文本、向量、不同索引或不同查询策略的复杂搜索场景。","cite_index":null,"published_at":1761580800.0,"site_icon":"https://cdn.deepseek.com/site-icons/aliyun.com","site_name":"阿里云文档中心","query_indexes":[0]},"reference":{"id":3,"type":"TOOL_SEARCH"},"stage_id":2},{"id":8,"type":"TOOL_OPEN","status":"WIP","result":{"url":"https://cloud.tencent.cn/document/product/1772/115420","title":"知识引擎原子能力 多轮改写_腾讯云","snippet":"多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。","cite_index":null,"published_at":1757606400.0,"site_icon":"https://cdn.deepseek.com/site-icons/tencent.cn","site_name":"CSDN博客","query_indexes":[0]},"reference":{"id":3,"type":"TOOL_SEARCH"},"stage_id":2},{"id":9,"type":"TOOL_OPEN","status":"WIP","result":{"url":"https://arxiv.org/html/2602.23184","title":"MTRAG-UN: A Benchmark for Open Challenges in Multi-Turn RAG Conversations","snippet":"We present MTRAG-UN, a benchmark for exploring open challenges in multi-turn retrieval augmented generation, a popular use of large language models. ... In a multi-turn conversation, later turns can implicitly reference information in earlier turns. Such questions are considered non-standalone as they require the prior turns to be understood.","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/arxiv.org","site_name":"arXiv","query_indexes":[0]},"reference":{"id":3,"type":"TOOL_SEARCH"},"stage_id":2},{"id":10,"type":"TOOL_OPEN","status":"WIP","result":{"url":"https://aitopics.org/doc/arxivorg:79999854","title":"AITopics | MTRAG: A Multi-Turn Conversational Benchmark for Evaluating Retrieval-Augmented Generation Systems","snippet":"We present MTRAG: an end-to-end human-generated multi-turn RAG benchmark that reflects several real-world properties across diverse dimensions for evaluating the full RAG pipeline. MTRAG contains 110 conversations averaging 7.7 turns","cite_index":null,"published_at":1736092800.0,"site_icon":"https://cdn.deepseek.com/site-icons/aitopics.org","site_name":"AITopics","query_indexes":[0]},"reference":{"id":3,"type":"TOOL_SEARCH"},"stage_id":2},{"id":11,"type":"TOOL_OPEN","status":"WIP","result":{"url":"https://cloud.baidu.com/doc/AIHC/s/am7j0h787","title":"快速部署联网搜索SearXNG插件","snippet":"联网搜索的实现方式 百舸联网搜索采用多轮搜索和AI Agent智能协同机制，实现精准的信息提取： - 第一步原始Query查询：基于用户的原始查询（Query），进行全网搜索，获取初步搜索结果。 - 第二步智能Query扩写：智能扩写Agent，对初始Query进行优化扩写，并再次执行全网搜索，获取更多结果。（可重复多次）","cite_index":null,"published_at":1763913600.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度智能云","query_indexes":[0]},"reference":{"id":3,"type":"TOOL_SEARCH"},"stage_id":2},{"id":12,"type":"TOOL_OPEN","status":"WIP","result":null,"reference":null,"stage_id":2},{"id":13,"type":"TOOL_OPEN","status":"WIP","result":null,"reference":null,"stage_id":2},{"id":14,"type":"TOOL_OPEN","status":"WIP","result":{"url":"https://pub.dev/packages/ddgs","title":"ddgs | Dart package","snippet":"A professional metasearch library that aggregates results from multiple web search engines including DuckDuckGo, Google, Bing, Brave, Ecosia, Qwant, and more. ... A professional metasearch library that aggregates results from multiple web search engines including DuckDuckGo, Google, Bing, Brave, and more.","cite_index":null,"published_at":1759939200.0,"site_icon":"https://cdn.deepseek.com/site-icons/pub.dev","site_name":"Dart packages","query_indexes":[0]},"reference":{"id":3,"type":"TOOL_SEARCH"},"stage_id":2}]},{"p":"has_pending_fragment","o":"SET","v":false}]}
+
+data: {"p":"response/fragments/-5/status","o":"SET","v":"FINISHED"}
+
+data: {"p":"response/fragments/-4/status","v":"FINISHED"}
+
+data: {"p":"response/fragments/-10/status","v":"FINISHED"}
+
+data: {"p":"response/fragments/-9/status","v":"FINISHED"}
+
+data: {"p":"response/fragments/-3/status","v":"FINISHED"}
+
+data: {"p":"response/fragments/-7/status","v":"FINISHED"}
+
+data: {"p":"response/fragments/-2/status","v":"FINISHED"}
+
+data: {"p":"response/fragments/-1/status","v":"FINISHED"}
+
+data: {"p":"response/fragments/-6/status","v":"FINISHED"}
+
+data: {"p":"response/fragments/-8/status","v":"FINISHED"}
+
+data: {"p":"response/has_pending_fragment","v":true}
+
+data: {"p":"response","o":"BATCH","v":[{"p":"fragments","o":"APPEND","v":[{"id":15,"type":"THINK","content":"第一","elapsed_secs":null,"references":[],"stage_id":3}]},{"p":"has_pending_fragment","o":"SET","v":false}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"已经"}
+
+data: {"v":"完成"}
+
+data: {"v":"，"}
+
+data: {"v":"现在"}
+
+data: {"v":"开始"}
+
+data: {"v":"第二轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"。"}
+
+data: {"v":"我将"}
+
+data: {"v":"根据"}
+
+data: {"v":"第一"}
+
+data: {"v":"轮"}
+
+data: {"v":"的结果"}
+
+data: {"v":"，"}
+
+data: {"v":"进一步"}
+
+data: {"v":"搜索"}
+
+data: {"v":"一些"}
+
+data: {"v":"更"}
+
+data: {"v":"具体的"}
+
+data: {"v":"术语"}
+
+data: {"v":"。"}
+
+data: {"p":"response/fragments/-1/elapsed_secs","o":"SET","v":1.909222163}
+
+data: {"p":"response/has_pending_fragment","v":true}
+
+: 
+
+data: {"p":"response","o":"BATCH","v":[{"p":"fragments","o":"APPEND","v":[{"id":16,"type":"TOOL_SEARCH","status":"WIP","content":null,"queries":[{"query":"\"多轮搜索\" 对话"},{"query":"\"多轮搜索\" 系统"},{"query":"\"多轮搜索\" 算法"},{"query":"\"多轮搜索\" 评估"},{"query":"\"多轮搜索\" 基准"},{"query":"\"多轮搜索\" 挑战"},{"query":"\"多轮搜索\" 框架"},{"query":"\"多轮搜索\" 应用"},{"query":"\"多轮搜索\" 模型"},{"query":"\"多轮搜索\" 技术"}],"results":[],"stage_id":3}]},{"p":"has_pending_fragment","o":"SET","v":false}]}
+
+data: {"p":"response/fragments/-1/results","o":"SET","v":[{"url":"https://gitee.com/zzdx713320/guada_ai","title":"蓝魔/GuaDa AI: 功能强大的知识库管理和工作学习系统，支持多角色对话、Agent自助多轮知识库搜索、浏览器自动化、会话压缩、MCP、SKILLS技能、机器人等多种高级AI功能。该项目采用前后端分离架构，后端基于NestJS，前端使用Vue 3 + Vite构建。 完全开源，供学习参考使用。","snippet":"自助多轮搜索：Agent 可在一次回答中多次搜索知识库，从\"先搜再查分块\"到\"按文件名过滤\"，组合多种策略逼近目标信息，自主决定是否需要再次搜索、搜索哪些文件、搜索哪些分块。","cite_index":null,"published_at":1778601600.0,"site_icon":"https://cdn.deepseek.com/site-icons/gitee.com","site_name":"Gitee","query_indexes":[0]},{"url":"https://www.53ai.com/news/LargeLanguageModel/2025111770642.html","title":"Agent 如何用搜索？这家最懂 AI 搜索的团队，把踩过的坑都分享出来了","snippet":"过去人类的一次搜索动作，未来可能会变成 Agent 的 10 次搜索。一个复杂的指令，Agent 会拆成多个子问题，来进行多轮、迭代式的检索。 给人用的搜索和给 AI 用的搜索，不管是交互逻辑、内容呈现、还是接口配置，完全不一样。","cite_index":null,"published_at":1763308800.0,"site_icon":"https://cdn.deepseek.com/site-icons/53ai.com","site_name":"53AI","query_indexes":[0]},{"url":"https://www.php.cn/faq/1438427.html","title":"如何用夸克AI大模型支持多轮语义搜索 夸克AI大模型智能检索功能介绍","snippet":"夸克AI大模型支持多轮语义搜索，其核心在于构建并维护一个动态的会话上下文。它不是孤立地处理每一个新查询，而是将当前查询与之前的对话历史进行深度融合，形成一个连贯的语义表示。具体来说...","cite_index":null,"published_at":1754150400.0,"site_icon":"https://cdn.deepseek.com/site-icons/php.cn","site_name":"php.cn","query_indexes":[0]},{"url":"https://news.qq.com/rain/a/20250321A031AV00","title":"SEARCH-R1: 基于强化学习的大型语言模型多轮搜索与推理框架","snippet":"这个研究提出了一种新型强化学习(RL)框架SEARCH-R1，该框架使大型语言模型(LLM)能够实现多轮、交错的搜索与推理能力集成。不同于传统的检索增强生成(RAG)或工具使用方法，SEARCH-R1通过强化学习训练LLM自主生成查询语句，并优化其基于搜索引擎结果的推理过程。","cite_index":null,"published_at":1742486400.0,"site_icon":"https://cdn.deepseek.com/site-icons/qq.com","site_name":"QQ News","query_indexes":[0]},{"url":"https://www.yzdli.com/news/ZX20250328_41358381","title":"体验完豆包新版深度思考，我发现 AI 终于学会像人类一样边想边搜_最新头条-云头条-云展动力","snippet":"简单来说，用户无需单独开启搜索功能，只需打开深度思考模式，AI 能在推理过程中灵活调用搜索工具，进行多轮动态搜索。 从「先搜后想」到「边想边搜」，AI 终于学会了如何像人类一样搜索问题。","cite_index":null,"published_at":1743091200.0,"site_icon":"https://cdn.deepseek.com/site-icons/yzdli.com","site_name":"云展动力","query_indexes":[0]},{"url":"https://ecweb.ecer.com/topic/cn/detail-160187-baidu_ai_cloud_enhances_llm_searches_with_oneclick_plugin.html","title":"百度智能云百舸平台一键部署 SearXNG 插件赋能大模型精准联网搜索","snippet":"先进的联网搜索系统并非简单地将搜索结果堆砌给大模型，而是采用多轮搜索和智能协同机制，对信息进行精准提取和过滤。这一过程可以分为以下四个关键步骤 ... 在全网范围内进行初步搜索，获取初始搜索结果。","cite_index":null,"published_at":1755792000.0,"site_icon":"https://cdn.deepseek.com/site-icons/ecer.com","site_name":"Ecer.com","query_indexes":[0]},{"url":"https://cloud.baidu.com/article/5306105","title":"基于OpenSearch与大模型的对话式搜索实践指南","snippet":"本文聚焦OpenSearch向量检索版与大模型的协同应用，通过向量空间建模、语义相似度计算和对话上下文管理，构建支持多轮对话、模糊查询和精准答案生成的搜索系统。文章详细拆解技术架构...","cite_index":null,"published_at":1764864000.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度智能云","query_indexes":[0]},{"url":"https://support.huaweicloud.com/usermanual-koosearch/koosearch_06_8015.html","title":"深度研究","snippet":"为此，KooSearch引入了深度研究功能，旨在通过多轮对话交互和任务规划，帮助用户完成需要多步推理的复杂任务。用户可以在前端页面上配置模型，进行任务规划的多轮交互式修改，并选择“研究报告”模式。系统后端将根据用户配置...","cite_index":null,"published_at":1772985600.0,"site_icon":"https://cdn.deepseek.com/site-icons/huaweicloud.com","site_name":"华为云帮助中心","query_indexes":[0]},{"url":"https://www.npmjs.com/package/agent-local-search","title":"agent-local-search","snippet":"为 Agent 提供高效的本地联网搜索能力。支持并发检索多个关键词，通过 Embedding 重排序将相关性，大幅减少搜索轮次和上下文消耗 ... 传统方式需要多轮搜索、逐个打开链接。agent-search 一次并发搜索多个关键词，自动重排序返回最相关结果。","cite_index":null,"published_at":1776268800.0,"site_icon":"https://cdn.deepseek.com/site-icons/npmjs.com","site_name":"NPM","query_indexes":[0]},{"url":"https://cnb.cool/phoeph/XunLong/-/blob/master/README.md","title":"README.md · master · phoeph/XunLong","snippet":"寻龙探索是一个基于多智能体协作的深度搜索与智能分析系统。如同古代寻龙师探寻龙脉一般，本系统能够深入互联网的信息海洋，智能分解复杂查询，执行多轮深度搜索，并生成高质量的分析报告 ... - 多轮搜索策略 - 根据查询复杂度自动调整搜索轮次 - 智能查询优化 - 自动生成最优搜索关键词","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/cnb.cool","site_name":"https://cnb.cool","query_indexes":[0]},{"url":"https://blog.csdn.net/2301_76341691/article/details/161112819","title":"用 Dify 与 EdgeOne 打造真正可上线的智能财经分析系统","snippet":"于是，我尝试用 Dify 搭建一套能够自动完成多轮搜索、持续累积上下文，并最终生成结构化分析报告的智能工作流。同时，为了让这套系统不仅能在本地运行，还能稳定地部署到线上，我引入了腾讯云 EdgeOne，负责统一访问入口、全球加速和安全防护。","cite_index":null,"published_at":1778774400.0,"site_icon":"https://cdn.deepseek.com/site-icons/csdn.net","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://www.cnblogs.com/deephub/p/18784639","title":"SEARCH-R1: 基于强化学习的大型语言模型多轮搜索与推理框架","snippet":"这个研究提出了一种新型强化学习(RL)框架SEARCH-R1，该框架使大型语言模型(LLM)能够实现多轮、交错的搜索与推理能力集成。不同于传统的检索增强生成(RAG)或工具使用方法，SEARCH-R1通过强化学习训练LLM自主生成查询语句，并优化其基于搜索引擎结果的推理过程。","cite_index":null,"published_at":1742486400.0,"site_icon":"https://cdn.deepseek.com/site-icons/cnblogs.com","site_name":"博客园","query_indexes":[0]},{"url":"https://xie.infoq.cn/article/5755180619e1b3314c813ca86","title":"AI 搜索的黑科技？DeepSearch 究竟“深”藏着什么秘密？","snippet":"新一代应用引入更强的深度搜索（DeepSearch）能力，结合关键词、语义与向量等混合检索，实现基于已有内容的多轮深度查询，支持如详细旅游行程规划与专业研报分析等复杂需求。增强生成系统通过搜索已有知识库内容并输入大模型进行总结和生成...","cite_index":null,"published_at":1757606400.0,"site_icon":"https://cdn.deepseek.com/site-icons/infoq.cn","site_name":"InfoQ 写作社区","query_indexes":[0]},{"url":"https://m.163.com/dy/article/KEJC5S7Q05566TJ2.html","title":"Agent 如何用搜索？这家最懂 AI 搜索的团队，把踩过的坑都分享出来了","snippet":"过去人类的一次搜索动作，未来可能会变成 Agent 的 10 次搜索。一个复杂的指令，Agent 会拆成多个子问题，来进行多轮、迭代式的检索。 给人用的搜索和给 AI 用的搜索，不管是交互逻辑、内容呈现、还是接口配置，完全不一样。在搜索成为 AI 产品必备功能的当下...","cite_index":null,"published_at":1763395200.0,"site_icon":"https://cdn.deepseek.com/site-icons/163.com","site_name":"手机网易网","query_indexes":[0]},{"url":"https://zhuanlan.zhihu.com/p/1987092986388038648","title":"Cut the Bill, Keep the Turns: Affordable Multi-Turn Search RL","snippet":"许多工作 [4,9,7,12] 提出了合成多轮数据集的算法，我们选用ASearcher [4]的合成多轮数据集，因其合成过程以wiki语料为主，适合我们不使用 Web search API 的实验设定。","cite_index":null,"published_at":1766505600.0,"site_icon":"https://cdn.deepseek.com/site-icons/zhihu.com","site_name":"知乎专栏","query_indexes":[0]},{"url":"https://jishuzhan.net:443/article/1966454286227390465","title":"AI搜索的黑科技？DeepSearch 究竟“深”藏着什么秘密？","snippet":"新一代应用引入更强的深度搜索（DeepSearch）能力，结合关键词、语义与向量等混合检索，实现基于已有内容的多轮深度查询，支持如详细旅游行程规划与专业研报分析等复杂需求。增强生成系统通过搜索已有知识库内容并输入大模型进行总结和生成 ... 提升搜索引擎准确性，然后再采用基于大模型的重排服务...","cite_index":null,"published_at":1757606400.0,"site_icon":"https://cdn.deepseek.com/site-icons/jishuzhan.net","site_name":"Jishuzhan","query_indexes":[0]},{"url":"http://gubaf10.eastmoney.com/news,832714,1498298388.html","title":"实时搜索，OpenAI对搜索的算法进行了深度优化，可在用户提出问题后获取实时内容_思晗科技(832714)股吧_东方财富网股吧","snippet":"实时搜索，OpenAI对搜索的算法进行了深度优化，可在用户提出问题后获取实时内容（分钟级别），包括股票、新闻等。 高级语音，在高级语音模式下，用户可以与ChatGPT进行更自然的多轮搜索对话，更像是一位语音搜索管家；移动端优化，用户可以在安卓、iOS、平板等移动端更好地使用搜索功能，效率提升40%以上。","cite_index":null,"published_at":1734364800.0,"site_icon":"https://cdn.deepseek.com/site-icons/eastmoney.com","site_name":"股吧","query_indexes":[0]},{"url":"https://www.alibabacloud.com/help/tc/open-search/industry-algorithm-edition/multiple-search","title":"多路搜尋 - Alibaba Cloud","snippet":"多路搜尋API允許在單次請求中並行發起最多N路獨立的查詢，並對各路召回的結果進行統一的排序和合并。可為每一路查詢自訂召回數量、優先順序，並對最終結果進行來源追溯，適用於需要融合文本、向量、不同索引或不同查詢策略的複雜搜尋情境。","cite_index":null,"published_at":1761667200.0,"site_icon":"https://cdn.deepseek.com/site-icons/alibabacloud.com","site_name":"Alibaba Cloud","query_indexes":[0]},{"url":"https://blog.gitcode.com/d150dcd5c65b4ab79fa72333b11ec4c4.html","title":"Search-R1项目评估效率优化实践","snippet":"采用多机分布式评估可以显著提升评估效率。Search-R1支持多节点并行评估，通过合理分配评估任务到不同计算节点，可以线性提升评估速度。具体实现需要注意节点间的通信效率和负载均衡。","cite_index":null,"published_at":1751644800.0,"site_icon":"https://cdn.deepseek.com/site-icons/gitcode.com","site_name":"GitCode","query_indexes":[0]},{"url":"https://segmentfault.com/a/1190000046306517","title":"SEARCH-R1: 基于强化学习的大型语言模型多轮搜索与推理框架","snippet":"实验数据集： 该框架在七个问答类数据集上进行了全面评估，涵盖通用问答领域(如NQ、TriviaQA)及多跳推理任务(如HotpotQA、2WikiMultiHopQA)。 对比基线...","cite_index":null,"published_at":1742486400.0,"site_icon":"https://cdn.deepseek.com/site-icons/segmentfault.com","site_name":"SegmentFault 思否","query_indexes":[0]},{"url":"https://zhuanlan.zhihu.com/p/1919904840391333662","title":"为了测试大模型的「搜商」，OpenAI 开源测评基准 BrowseComp","snippet":"在多轮搜索的过程中，既要有规划能力，也要有去伪存真的条件验证能力，人类在执行搜索时可以直接摒弃排除掉某个页面，而大模型则需要正确规划并在有限的上下文里「注意到」正确答案。","cite_index":null,"published_at":1750435200.0,"site_icon":"https://cdn.deepseek.com/site-icons/zhihu.com","site_name":"知乎专栏","query_indexes":[0]},{"url":"https://aclanthology.org/people/bhuwan-dhingra/unverified/","title":"Bhuwan Dhingra","snippet":"In this work, we conduct a systematic evaluation of over-searching across multiple dimensions, including query types, model categories, retrieval conditions, and multi-turn conversations. Our findings show: (i) search generally improves answer accuracy on answerable queries but harms abstention on unanswerable ones...","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/aclanthology.org","site_name":"ACL Anthology","query_indexes":[0]},{"url":"https://milvus.org.cn/ai-quick-reference/how-do-you-decide-how-many-retrieval-rounds-to-allow-depth-of-multistep-before-just-answering-with-whats-gathered-what-is-the-diminishing-return-and-how-to-measure-it","title":"你如何决定允许多少轮检索（多步骤的深度），之后直接用收集到的信息回答？什么是收益递减，以及如何衡量它？","snippet":"在多步骤系统中决定检索轮数需要平衡准确性、效率和实际约束。最佳深度通常取决于评估每一步提供的额外价值与延迟或计算资源成本的对比。例如，搜索系统可能从一个广泛的查询开始，根据初始结果对其进行优化，并在后续轮次不再产生重要新信息时停止。一种常见的方法是基于测试设置一个固定的限制（例如...","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/milvus.org.cn","site_name":"milvus.org.cn","query_indexes":[0]},{"url":"https://www.x-techcon.com/article/16469.html","title":"新突破！多模态搜索模型MMSearch-R1发布","snippet":"训练时，模型每步采样 512 条（图像、问题、答案）三元组，每条做 8 条 rollout，最多三轮对话、两轮搜索；奖励由“答对得分×搜索惩罚”与格式分加权构成，搜索惩罚促使模型优先用内部知识。为此...","cite_index":null,"published_at":1753027200.0,"site_icon":"https://cdn.deepseek.com/site-icons/x-techcon.com","site_name":"x-techcon.com","query_indexes":[0]},{"url":"https://news.miracleplus.com/share_link/65928","title":"Search-R1: 通过强化学习训练LLMs进行推理并利用搜索引擎 - 奇绩创坛｜齐思","snippet":"它通过多轮搜索交互和简单的基于结果的奖励函数来优化语言模型的推理过程 ... 通过不断优化查询并与搜索引擎交互，LLMs可以更好地利用搜索引擎进行推理，相比于之前的方法，这种方法在多个问题回答基准测试中取得了高达+26%的准确率提升。这种方法对于构建有效的深度研究代理非常有用和适用...","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/miracleplus.com","site_name":"齐思","query_indexes":[0]},{"url":"https://www.x-mol.com/paper/1752777486240550912/t","title":"MT-Eval：大型语言模型的多轮能力评估基准,arXiv - CS - Computation and Language","snippet":"为了解决这一差距，我们引入了 MT-Eval，这是一个旨在评估多轮对话能力的综合基准。通过分析人类与法学硕士的对话，我们将交互模式分为四种类型：回忆、扩展、细化和跟进。我们通过扩充现有数据集或使用 GPT-4 创建新示例来为每个类别构建多轮查询，以避免数据泄漏。为了研究影响多轮能力的因素...","cite_index":null,"published_at":1706630400.0,"site_icon":"https://cdn.deepseek.com/site-icons/x-mol.com","site_name":"X-MOL","query_indexes":[0]},{"url":"https://huggingface.ac.cn/papers/2602.02185","title":"Vision-DeepResearch 基准：重新思考多模态大语言模型的视觉与文本搜索","snippet":"Vision-DeepResearch 基准测试通过引入真实的评估条件，并利用多轮裁剪搜索工作流改进视觉检索，解决了评估多模态模型图文搜索能力时的局限性。 多模态大语言模型 (MLLMs) 推动了 VQA 的发展，目前已支持利用搜索引擎进行复杂视觉文本事实查找的 Vision-DeepResearch 系统。然而...","cite_index":null,"published_at":1770048000.0,"site_icon":"https://cdn.deepseek.com/site-icons/huggingface.ac.cn","site_name":"huggingface.ac.cn","query_indexes":[0]},{"url":"https://arxiv.deeppaper.ai/papers/2601.05461v1","title":"RECOR：面向推理的多轮对话式检索基准 | Arxiv - DeepPaper","snippet":"我们提出了一个基于推理的对话式信息检索基准，包含跨越 11 个领域的 707 个对话（2,971 轮） ... 本文介绍了一个新的面向推理的多轮对话式检索基准 RECOR，强调了将对话历史与显式推理相结合以提高检索性能的重要性。","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/deeppaper.ai","site_name":"deeppaper.ai","query_indexes":[0]},{"url":"https://arxiv.deeppaper.ai/papers/2601.05461v1/similar","title":"RECOR：面向推理的多轮对话式检索基准的相似论文 | Arxiv - DeepPaper","snippet":"现有的基准测试分别处理多轮对话和推理密集型检索，然而现实世界的信息检索需要两者兼备。为了弥合这一差距，我们提出了一个基于推理的对话式信息检索基准，包含跨越 11 个领域的 707 个对话（2,971 轮）。为了确保质量...","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/deeppaper.ai","site_name":"deeppaper.ai","query_indexes":[0]},{"url":"https://hub.baai.ac.cn/view/50441","title":"Agent 如何用搜索？这家最懂 AI 搜索的团队，把踩过的坑都分享出来了","snippet":"AI 时代的搜索与传统搜索的根本区别在于，人类搜索是「一次性」的静态检索 ... 能读什么专业？」这类问题就得需要搜索和模型配合，通过多轮搜索和 Agent 的协同来解决。这其中除了调用搜索 API ... 这对 Agent 的挑战就比较高，需要对指令做复杂的分析，拆解成多个维度。","cite_index":null,"published_at":1763481600.0,"site_icon":"https://cdn.deepseek.com/site-icons/baai.ac.cn","site_name":"智源社区","query_indexes":[0]},{"url":"https://blog.csdn.net/m0_59235945/article/details/155099529","title":"你的Agent为什么总找不到正确答案？因为你没踩过这些“坑”！","snippet":"过去人类的一次搜索动作，未来可能会变成 Agent 的 10 次搜索。一个复杂的指令，Agent 会拆成多个子问题，来进行多轮、迭代式的检索。 给人用的搜索和给 AI 用的搜索，不管是交互逻辑、内容呈现、还是接口配置，完全不一样。在搜索成为 AI 产品必备功能的当下...","cite_index":null,"published_at":1763654400.0,"site_icon":"https://cdn.deepseek.com/site-icons/csdn.net","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://m.163.com/dy/article/K6UGFUOK05118UGF.html","title":"ByteDance研究揭示搜索代理的致命弱点","snippet":"当AI面对复杂的多方面搜索任务时，往往无法将大任务完整分解为所有必要的子任务 ... 首先是高搜索量和广度要求，任务必须需要大量不同的信息点，需要进行多轮搜索和长时间的处理过程。这就像要求考生不是回答一个问题，而是完成一整套调研报告。其次是时间和情境不变性...","cite_index":null,"published_at":1755187200.0,"site_icon":"https://cdn.deepseek.com/site-icons/163.com","site_name":"手机网易网","query_indexes":[0]},{"url":"https://arxiv.org/html/2601.05503","title":"Over-Searching in Search-Augmented Large Language Models","snippet":"In this work, we conduct a systematic evaluation of over-searching across multiple dimensions, including query types, model categories, retrieval conditions, and multi-turn conversations. Our findings show: (i) search generally improves answer accuracy on answerable queries but harms abstention on unanswerable ones...","cite_index":null,"published_at":1773158400.0,"site_icon":"https://cdn.deepseek.com/site-icons/arxiv.org","site_name":"arXiv","query_indexes":[0]},{"url":"https://cloud.baidu.com/article/5666693","title":"示例代码中心","snippet":"搜索结果摘要需严格控制在窗口容量内 - 多轮对话会持续消耗可用上下文空间 - 复杂查询可能导致关键信息被截断 - 服务配额的隐性约束 免费版API通常设置严格的调用配额。例如某平台每月提供1000次免费搜索...","cite_index":null,"published_at":1768838400.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度智能云","query_indexes":[0]},{"url":"https://iclr.cc/virtual/2026/poster/10006679","title":"Demystifying Deep Search: A Holistic Evaluation with Hint-free Multi-Hop Questions and Factorised Metrics","snippet":"RAG (Retrieval-Augmented Generation) systems and web agents are increasingly evaluated on multi-hop deep search tasks, yet current practice suffers from two major limitations. First ... we present WebDetective, a benchmark of hint-free multi-hop questions paired with a controlled Wikipedia sandbox that ensures full traceability of model actions...","cite_index":null,"published_at":1770307200.0,"site_icon":"https://cdn.deepseek.com/site-icons/iclr.cc","site_name":"ICLR 2026","query_indexes":[0]},{"url":"https://packagist.org/packages/molagpt/deep-research-core","title":"molagpt/deep-research-core","snippet":"一个用于执行多轮搜索与深度分析的 PHP 库，基于智能工具规划的研究引擎。 ## 🚀 功能特点 - 🔄 多轮迭代研究：支持基于前一轮分析结果自动生成下一轮研究策略 ... MolaGPT-DeepResearch 是一个基于 PHP 的智能研究引擎，通过多轮迭代和工具规划来生成高质量的研究报告。","cite_index":null,"published_at":1777219200.0,"site_icon":"https://cdn.deepseek.com/site-icons/packagist.org","site_name":"Packagist","query_indexes":[0]},{"url":"https://developer.aliyun.com/article/1657999","title":"SEARCH-R1: 基于强化学习的大型语言模型多轮搜索与推理框架","snippet":"简介： SEARCH-R1是一种创新的强化学习框架，使大型语言模型（LLM）具备多轮搜索与推理能力。它通过强化学习自主生成查询并优化基于检索结果的推理，无需人工标注数据。相比传统RAG或工具使用方法...","cite_index":null,"published_at":1742486400.0,"site_icon":"https://cdn.deepseek.com/site-icons/aliyun.com","site_name":"阿里云开发者社区","query_indexes":[0]},{"url":"https://developer.baidu.com/article/detail.html?id=6991270","title":"全链路智能研究框架开源：动态搜索与知识推理的工程化实践","snippet":"简介：本文深入解析某开源社区最新发布的智能研究框架，该框架通过动态搜索词生成、网络查询、结果反思与迭代优化机制，构建了端到端的知识发现体系。开发者可快速集成多轮搜索与推理能力，显著提升复杂问题的解答质量与可信度，尤其适合需要深度信息挖掘的科研、金融及法律场景 ... - 动态搜索策略...","cite_index":null,"published_at":1778428800.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度开发者中心","query_indexes":[0]},{"url":"https://huggingface.ac.cn/papers/2506.20670","title":"MMSearch-R1：激励LMM进行搜索","snippet":"我们提出了 MMSearch-R1，这是第一个端到端的强化学习框架，它使 LMM 能够在真实世界互联网环境中执行按需、多轮搜索。我们的框架集成了图像和文本搜索工具，允许模型根据基于结果的奖励和搜索惩罚来判断何时以及如何调用它们。为了支持训练...","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/huggingface.ac.cn","site_name":"huggingface.ac.cn","query_indexes":[0]},{"url":"https://blog.csdn.net/deephub/article/details/146413857","title":"SEARCH-R1: 基于强化学习的大型语言模型多轮搜索与推理框架","snippet":"这个研究提出了一种新型强化学习(RL)框架SEARCH-R1，该框架使大型语言模型(LLM)能够实现多轮、交错的搜索与推理能力集成。不同于传统的检索增强生成(RAG)或工具使用方法，SEARCH-R1通过强化学习训练LLM自主生成查询语句，并优化其基于搜索引擎结果的推理过程。","cite_index":null,"published_at":1742486400.0,"site_icon":"https://cdn.deepseek.com/site-icons/csdn.net","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://www.ifanr.com/1618920?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=","title":"体验完豆包新版深度思考，我发现 AI 终于学会像人类一样「边想边搜」","snippet":"简单来说，用户无需单独开启搜索功能，只需打开深度思考模式，AI 能在推理过程中灵活调用搜索工具，进行多轮动态搜索。 从「先搜后想」到「边想边搜」，AI 终于学会了如何像人类一样搜索问题。","cite_index":null,"published_at":1743004800.0,"site_icon":"https://cdn.deepseek.com/site-icons/ifanr.com","site_name":"爱范儿","query_indexes":[0]},{"url":"https://cnbeta.stateserver.com/wap/view/1500118.htm","title":"百度AI搜索上线DeepSearch 支持主动思考和无限次免费使用 - cnBeta.COM 移动版(WAP)","snippet":"百度AI搜索日前重磅升级，推出国内首个基于百亿级内容库的深度搜索（DeepSearch），并上线了个人知识库、创作画布等创新功能，打造\"边想边搜\"的新一代智能搜索体验。据悉，此次发布的深度搜索具备类似人类用户般的搜索思维，能“边想边搜”解决复杂问题，并且免费无限次使用。此次升级标志着搜索引擎正式迈入主动思考...","cite_index":null,"published_at":1747324800.0,"site_icon":"https://cdn.deepseek.com/site-icons/stateserver.com","site_name":"stateserver.com","query_indexes":[0]},{"url":"http://cn-sec.com/archives/tag/ai%e6%84%8f%e5%9b%be%e8%af%86%e5%88%ab","title":"首页ai意图识别","snippet":"WinClaw安全龙虾通过内置智能搜索系统，聚合200+全球搜索源，无需配置APIKey即可实现跨领域精准检索，具备智能意图识别、多轮搜索、网页深度阅读等功能，显著提升用户体验。让小龙虾帮忙搜个资料...","cite_index":null,"published_at":1777564800.0,"site_icon":"https://cdn.deepseek.com/site-icons/cn-sec.com","site_name":"CN-SEC","query_indexes":[0]},{"url":"https://hub.baai.ac.cn/paper/04b1353c-46ce-4465-98e8-c4fe592e501b#charts","title":"Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning UIUC&谷歌｜Search-R1通过强化学习训练大型语言模型进行推理与搜索引擎调用 2025-05-08 10:20","snippet":"关键思路 关键思路是通过强化学习（RL）训练LLM自主生成多个搜索查询并进行逐步推理，从而优化多轮搜索交互。Search-R1模型扩展了DeepSeek-R1，引入了检索标记屏蔽以稳定RL训练，并采用基于结果的简单奖励函数。这种方法让LLM直接学习与搜索引擎的有效交互方式。","cite_index":null,"published_at":1741795200.0,"site_icon":"https://cdn.deepseek.com/site-icons/baai.ac.cn","site_name":"智源社区","query_indexes":[0]},{"url":"https://deephub.blog.csdn.net/article/details/146413857","title":"SEARCH-R1: 基于强化学习的大型语言模型多轮搜索与推理框架","snippet":"这个研究提出了一种新型强化学习(RL)框架SEARCH-R1，该框架使大型语言模型(LLM)能够实现多轮、交错的搜索与推理能力集成。不同于传统的检索增强生成(RAG)或工具使用方法，SEARCH-R1通过强化学习训练LLM自主生成查询语句，并优化其基于搜索引擎结果的推理过程。","cite_index":null,"published_at":1742486400.0,"site_icon":"https://cdn.deepseek.com/site-icons/csdn.net","site_name":"CSDN","query_indexes":[0]},{"url":"https://arxiv.deeppaper.ai/papers/2510.12801v1","title":"DeepMMSearch-R1：赋能多模态LLM进行多模态网络搜索","snippet":"DeepMMSearch-R1是一个多模态LLM，它执行按需、多轮网络搜索，并为图像和文本动态创建查询，使用新型多模态VQA数据集进行训练 ... 我们提出了 MMSearch-R1，这是第一个端到端的强化学习框架，使 LMM 能够在真实的互联网环境中执行按需、多轮搜索。我们的框架集成了图像和文本搜索工具...","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/deeppaper.ai","site_name":"deeppaper.ai","query_indexes":[0]},{"url":"https://www.pixelstech.net/feed/detail/68167.html?lang=chinese","title":"Chroma Context-1：训练一个自我编辑的搜索代理","snippet":"该模型经过训练，能够将高级查询分解为子查询，并在多轮中迭代搜索语料库。当智能体的上下文窗口填满时，它会选择性地丢弃不相关结果，以释放容量并减少噪音，以便进行进一步探索。","cite_index":null,"published_at":1774454400.0,"site_icon":"https://cdn.deepseek.com/site-icons/pixelstech.net","site_name":"PixelsTech","query_indexes":[0]},{"url":"https://cloud.tencent.cn/developer/article/1112814?from=15425","title":"李彦宏的新专利和Google对话搜索有何不同？","snippet":"这个专利名字叫“对象识别技术与装置”，这个专利可以让人与机器的交互多轮进行，从案例来看这个专利让机器与人的对话更加自然。一份国外调查结果显示ios7设备Siri使用率只有15%。GoogleNow ... 其最大的突破在于，基于上下文来理解用户的多轮搜索，向真人一样理解用户不断追问的问题，这是Siri们亟待恶补的地方。","cite_index":null,"published_at":1524844800.0,"site_icon":"https://cdn.deepseek.com/site-icons/tencent.cn","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://developer.volcengine.com/articles/7500987147047043110","title":"从Search到Deep ReSearch：解析现代搜索模型的任务分解与执行策略","snippet":"结合交错式多轮搜索引擎调用的文本生成 Search-R1 通过创新的五阶段交互流程实现知识检索与推理的深度融合 ... 系统支持多轮次检索 - 推理循环，模型可根据信息完备性动态决定是否发起新一轮检索，直至满足解答需求。 5.","cite_index":null,"published_at":1746460800.0,"site_icon":"https://cdn.deepseek.com/site-icons/volcengine.com","site_name":"火山引擎开发者社区","query_indexes":[0]}]}
+
+data: {"p":"response/fragments/-1/status","v":"FINISHED"}
+
+data: {"p":"response/has_pending_fragment","v":true}
+
+data: {"p":"response","o":"BATCH","v":[{"p":"fragments","o":"APPEND","v":[{"id":17,"type":"THINK","content":"第二轮","elapsed_secs":null,"references":[],"stage_id":4}]},{"p":"has_pending_fragment","o":"SET","v":false}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"搜索"}
+
+data: {"v":"已经"}
+
+data: {"v":"完成"}
+
+data: {"v":"。"}
+
+data: {"v":"现在"}
+
+data: {"v":"开始"}
+
+data: {"v":"第三"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"。"}
+
+data: {"v":"我将"}
+
+data: {"v":"根据"}
+
+data: {"v":"第二轮"}
+
+data: {"v":"的结果"}
+
+data: {"v":"，"}
+
+data: {"v":"进一步"}
+
+data: {"v":"搜索"}
+
+data: {"v":"一些"}
+
+data: {"v":"更"}
+
+data: {"v":"具体的"}
+
+data: {"v":"方面"}
+
+data: {"v":"。"}
+
+data: {"p":"response/fragments/-1/elapsed_secs","o":"SET","v":1.8779744809999999}
+
+data: {"p":"response/has_pending_fragment","v":true}
+
+: 
+
+data: {"p":"response","o":"BATCH","v":[{"p":"fragments","o":"APPEND","v":[{"id":18,"type":"TOOL_SEARCH","status":"WIP","content":null,"queries":[{"query":"\"多轮搜索\" 优化"},{"query":"\"多轮搜索\" 策略"},{"query":"\"多轮搜索\" 系统 架构"},{"query":"\"多轮搜索\" 数据 集"},{"query":"\"多轮搜索\" 未来 趋势"},{"query":"\"多轮搜索\" 评估 方法"},{"query":"\"多轮搜索\" 工具 对比"},{"query":"\"多轮搜索\" 案例 研究"}],"results":[],"stage_id":4}]},{"p":"has_pending_fragment","o":"SET","v":false}]}
+
+data: {"p":"response/fragments/-1/results","o":"SET","v":[{"url":"https://ecweb.ecer.com/topic/cn/detail-160187-baidu_ai_cloud_enhances_llm_searches_with_oneclick_plugin.html","title":"百度智能云百舸平台一键部署 SearXNG 插件赋能大模型精准联网搜索","snippet":"先进的联网搜索系统并非简单地将搜索结果堆砌给大模型，而是采用多轮搜索和智能协同机制，对信息进行精准提取和过滤。这一过程可以分为以下四个关键步骤 ... 智能模块会对初始查询进行优化和扩展...","cite_index":null,"published_at":1755792000.0,"site_icon":"https://cdn.deepseek.com/site-icons/ecer.com","site_name":"Ecer.com","query_indexes":[0]},{"url":"https://gitee.com/zzdx713320/guada_ai","title":"蓝魔/GuaDa AI: 功能强大的知识库管理和工作学习系统，支持多角色对话、Agent自助多轮知识库搜索、浏览器自动化、会话压缩、MCP、SKILLS技能、机器人等多种高级AI功能。该项目采用前后端分离架构，后端基于NestJS，前端使用Vue 3 + Vite构建。 完全开源，供学习参考使用。","snippet":"自助多轮搜索：Agent 可在一次回答中多次搜索知识库，从\"先搜再查分块\"到\"按文件名过滤\"，组合多种策略逼近目标信息，自主决定是否需要再次搜索、搜索哪些文件、搜索哪些分块。","cite_index":null,"published_at":1778601600.0,"site_icon":"https://cdn.deepseek.com/site-icons/gitee.com","site_name":"Gitee","query_indexes":[0]},{"url":"https://juejin.cn/post/7582854603060822058","title":"GEO 优化核心密码：GeneralSearch\"边想边搜\" 智能交互原理全拆解","snippet":"优化后的内容在 GeneralSearch 的多轮探索中更容易被发现和理解 - 结构化、权威性强的内容在信息融合阶段会被赋予更高权重 - 最终，这些内容会成为 AI 生成答案时的优先引用源，实现 \"零点击曝光\" 的营销效果","cite_index":null,"published_at":1765555200.0,"site_icon":"https://cdn.deepseek.com/site-icons/juejin.cn","site_name":"掘金","query_indexes":[0]},{"url":"https://www.ranktracker.com/zh/blog/multi-stage-query-processing-in-seo/","title":"搜索引擎优化中的多级查询处理","snippet":"✅ 1.优化自然语言和对话查询 ... 多阶段查询处理可细化搜索意图，帮助搜索引擎提供更好的上下文驱动搜索结果。通过针对查询细化、结构化数据和对话式搜索优化内容，网站可以获得更高的排名并吸引更多相关流量。","cite_index":null,"published_at":1741708800.0,"site_icon":"https://cdn.deepseek.com/site-icons/ranktracker.com","site_name":"Ranktracker","query_indexes":[0]},{"url":"https://www.alibabacloud.com/help/tc/open-search/industry-algorithm-edition/multimodal-search#topic-2129082","title":"電商行業模板-多路搜尋 - Alibaba Cloud","snippet":"OpenSearch的多路搜尋功能結合了文本搜尋和向量搜尋，做到了搜尋延遲和計算消耗低於OR邏輯情況下更高的準確性，並在搜題情境已經得到有效驗證。多路召回架構還可以使用到：圖片向量召回...","cite_index":null,"published_at":1776960000.0,"site_icon":"https://cdn.deepseek.com/site-icons/alibabacloud.com","site_name":"Alibaba Cloud","query_indexes":[0]},{"url":"https://www.ranktracker.com/zh/blog/sequential-queries-in-seo/","title":"搜索引擎优化中的顺序查询","snippet":"针对顺序查询进行优化可确保内容在用户细化搜索意图时保持相关性。通过结构化内容以匹配多步骤查询、优化意图进展以及加强内部链接，网站可以提高搜索排名和参与度。","cite_index":null,"published_at":1741708800.0,"site_icon":"https://cdn.deepseek.com/site-icons/ranktracker.com","site_name":"Ranktracker","query_indexes":[0]},{"url":"https://www.53ai.com/news/LargeLanguageModel/2025111770642.html","title":"Agent 如何用搜索？这家最懂 AI 搜索的团队，把踩过的坑都分享出来了","snippet":"过去人类的一次搜索动作，未来可能会变成 Agent 的 10 次搜索。一个复杂的指令，Agent 会拆成多个子问题，来进行多轮、迭代式的检索 ... 」这类问题就得需要搜索和模型配合，通过多轮搜索和 Agent 的协同来解决。这其中除了调用搜索 API...","cite_index":null,"published_at":1763308800.0,"site_icon":"https://cdn.deepseek.com/site-icons/53ai.com","site_name":"53AI","query_indexes":[0]},{"url":"https://www.cnblogs.com/deephub/p/18784639","title":"SEARCH-R1: 基于强化学习的大型语言模型多轮搜索与推理框架","snippet":"这个研究提出了一种新型强化学习(RL)框架SEARCH-R1，该框架使大型语言模型(LLM)能够实现多轮、交错的搜索与推理能力集成 ... 该模型的核心创新在于完全依靠强化学习机制（无需人工标注的交互轨迹）来学习最优的搜索查询策略及基于检索知识的推理方法，从而显著提升问答任务的性能表现。","cite_index":null,"published_at":1742486400.0,"site_icon":"https://cdn.deepseek.com/site-icons/cnblogs.com","site_name":"博客园","query_indexes":[0]},{"url":"https://developer.volcengine.com/articles/7500987147047043110","title":"从Search到Deep ReSearch：解析现代搜索模型的任务分解与执行策略","snippet":"多跳搜索和深度研究型搜索的关键在于模仿人的思维链搜索 ： - 模型首先根据问题进行初步推理，确定基础搜索方向 - 执行初始搜索，获取第一批信息 ... 结合交错式多轮搜索引擎调用的文本生成","cite_index":null,"published_at":1746460800.0,"site_icon":"https://cdn.deepseek.com/site-icons/volcengine.com","site_name":"火山引擎开发者社区","query_indexes":[0]},{"url":"https://m.163.com/dy/article/KEJC5S7Q05566TJ2.html","title":"Agent 如何用搜索？这家最懂 AI 搜索的团队，把踩过的坑都分享出来了","snippet":"一个复杂的指令，Agent 会拆成多个子问题，来进行多轮、迭代式的检索 ... 多搜索几次来提升内容质量，减少模型推理成本，是更经济的策略 ... 能读什么专业？」这类问题就得需要搜索和模型配合，通过多轮搜索和 Agent 的协同来解决。这其中除了调用搜索 API...","cite_index":null,"published_at":1763395200.0,"site_icon":"https://cdn.deepseek.com/site-icons/163.com","site_name":"手机网易网","query_indexes":[0]},{"url":"https://zhuanlan.zhihu.com/p/1987092986388038648","title":"Cut the Bill, Keep the Turns: Affordable Multi-Turn Search RL","snippet":"为了缩小这一差距，业界已经提出了许多有效方案 [4,7,9,10,11,12] ，主流做法大多遵循合成数据构造 → SFT 对齐 → RL 强化优化的流程，逐步把小模型推到更稳健的长轮次搜索策略。","cite_index":null,"published_at":1766505600.0,"site_icon":"https://cdn.deepseek.com/site-icons/zhihu.com","site_name":"知乎专栏","query_indexes":[0]},{"url":"https://bbs.huaweicloud.com/blogs/458852","title":"面向智能搜索的AI Agent技术架构与算法研究","snippet":"本研究系统性地探讨了面向智能搜索的AI Agent技术架构与核心算法。从自然语言理解、知识图谱推理到多轮搜索策略与个性化推荐，本研究展示了AI Agent在复杂搜索场景中的应用潜力。通过向量化表示...","cite_index":null,"published_at":1755619200.0,"site_icon":"https://cdn.deepseek.com/site-icons/huaweicloud.com","site_name":"华为云社区","query_indexes":[0]},{"url":"https://cnb.cool/phoeph/XunLong/-/blob/master/README.md","title":"README.md · master · phoeph/XunLong","snippet":"本系统能够深入互联网的信息海洋，智能分解复杂查询，执行多轮深度搜索，并生成高质量的分析报告 ... - 多轮搜索策略 - 根据查询复杂度自动调整搜索轮次 - 智能查询优化 - 自动生成最优搜索关键词 - 内容去重过滤 - 避免重复信息，提高结果质量 - 时间范围限定 - 支持特定时间段的信息检索","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/cnb.cool","site_name":"https://cnb.cool","query_indexes":[0]},{"url":"https://blog.csdn.net/2301_76341691/article/details/161112819","title":"用 Dify 与 EdgeOne 打造真正可上线的智能财经分析系统","snippet":"于是，我尝试用 Dify 搭建一套能够自动完成多轮搜索、持续累积上下文，并最终生成结构化分析报告的智能工作流。同时，为了让这套系统不仅能在本地运行，还能稳定地部署到线上，我引入了腾讯云 EdgeOne，负责统一访问入口、全球加速和安全防护。","cite_index":null,"published_at":1778774400.0,"site_icon":"https://cdn.deepseek.com/site-icons/csdn.net","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://blog.csdn.net/weixin_27031001/article/details/160938654","title":"基于MCP协议构建AI联网搜索服务器：WebSearch-MCP部署与实战指南","snippet":"你可以把它理解为一个高度定制化的“搜索代理”。当你的AI应用需要查询实时信息时，不再需要直接去调用谷歌或必应的API（可能面临费用、速率限制或复杂性），而是通过这个MCP服务器作为中间层，它帮你处理好认证、请求格式化、结果解析和内容提炼等一系列脏活累活，最后把干净、结构化的信息喂给你的大模型 ...","cite_index":null,"published_at":1778256000.0,"site_icon":"https://cdn.deepseek.com/site-icons/csdn.net","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://jishuzhan.net:443/article/1903402304412397569","title":"SEARCH-R1：大型语言模型的多轮搜索推理革命","snippet":"\"动态搜索+自主推理\"的协同进化 ... SEARCH-R1通过**<search>标记**实现推理流程的动态控制。当模型生成该标记时，自动触发搜索引擎查询，并将检索结果以**<information>段落**形式注入上下文。这种设计使模型能够...","cite_index":null,"published_at":1742572800.0,"site_icon":"https://cdn.deepseek.com/site-icons/jishuzhan.net","site_name":"Jishuzhan","query_indexes":[0]},{"url":"https://developer.baidu.com/article/detail.html?id=3331473","title":"深入理解SParC数据集：多轮Text-to-SQL的新里程碑","snippet":"SParC数据集是由耶鲁大学和Salesforce公司联合发布的一个跨领域多轮Text-to-SQL数据集。它基于Spider数据集扩展而来，通过模拟真实场景中的多轮对话，为用户提供了丰富的查询示例。SParC数据集包含4298个问题轮次，大约12,000多个自然语言问句到SQL标注的Question-SQL对，这些问题来自于138个不同领域的200个复杂数据库。","cite_index":null,"published_at":1723737600.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度开发者中心","query_indexes":[0]},{"url":"https://ieee-dataport.org/documents/comprehensive-serp-data","title":"Comprehensive SERP Data","snippet":"This dataset contains 14,465 search results collected from Google (5,895) and Bing (8,570), across 500 diverse queries. Each record includes ranking metadata, technical features (Lighthouse scores), and content features (query matching, semantics, word count).","cite_index":null,"published_at":1756569600.0,"site_icon":"https://cdn.deepseek.com/site-icons/ieee-dataport.org","site_name":"IEEE DataPort","query_indexes":[0]},{"url":"https://www.alibabacloud.com/help/zh/open-search/industry-algorithm-edition/multiple-search","title":"多路搜索 - Alibaba Cloud","snippet":"多路搜索API允许在单次请求中并行发起最多N路独立的查询，并对各路召回的结果进行统一的排序和合并。可为每一路查询自定义召回数量、优先级，并对最终结果进行来源追溯，适用于需要融合文本、向量、不同索引或不同查询策略的复杂搜索场景。","cite_index":null,"published_at":1761580800.0,"site_icon":"https://cdn.deepseek.com/site-icons/alibabacloud.com","site_name":"Alibaba Cloud","query_indexes":[0]},{"url":"https://docs.opensearch.org/3.4/sql-and-ppl/ppl/commands/multisearch/#example-2-segmenting-accounts-by-balance-tier","title":"multisearch","snippet":"Themultisearch command runs multiple subsearches and merges their results. It allows you to combine data from different queries on the same or different sources. ... Multisearch is particularly useful for comparative analysis, union operations, and creating comprehensive datasets from multiple search criteria.","cite_index":null,"published_at":1777305600.0,"site_icon":"https://cdn.deepseek.com/site-icons/opensearch.org","site_name":"OpenSearch","query_indexes":[0]},{"url":"https://firebase.blog/posts/2025/09/dataconnect-searches","title":"Full-text search and other searches with Data Connect","snippet":"Full-text search lets you quickly and efficiently locate information within large datasets by searching for keywords and phrases across multiple columns at once. ... Full-text search is even more advanced, as it can search an entire table across columns to find words, phrases, or numbers. It performs lexical stemming...","cite_index":null,"published_at":1756742400.0,"site_icon":"https://cdn.deepseek.com/site-icons/firebase.blog","site_name":"The Firebase Blog","query_indexes":[0]},{"url":"https://blog.csdn.net/m0_66858441/article/details/157514602","title":"【大模型评测】怎么构造 ID / OOD / 多轮数据集？","snippet":"一、总体原则 1.评测集 ≠ 训练集 不能直接用模型训练数据，但可以用用户真实问题分布 2.分布是刻意设计的 3.每条样本必须可判定 不可判定 = 无法评测 = 垃圾样本","cite_index":null,"published_at":1770134400.0,"site_icon":"https://cdn.deepseek.com/site-icons/csdn.net","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://docs.opensearch.org/2.12/aggregations/bucket/multi-terms/","title":"Multi-terms","snippet":"Multi-terms aggregations are useful when you need to sort by document count, or when you need to sort by a metric aggregation on a composite key and get the top n results. For example ... multi_terms | Indicates a multi-terms aggregation that gathers buckets of documents together based on criteria specified by multiple terms.","cite_index":null,"published_at":1755446400.0,"site_icon":"https://cdn.deepseek.com/site-icons/opensearch.org","site_name":"OpenSearch","query_indexes":[0]},{"url":"https://blog.csdn.net/weixin_48534929/article/details/151624039","title":"AI搜索的黑科技？DeepSearch 究竟“深”藏着什么秘密？","snippet":"新一代应用引入更强的深度搜索（DeepSearch）能力，结合关键词、语义与向量等混合检索，实现基于已有内容的多轮深度查询，支持如详细旅游行程规划与专业研报分析等复杂需求。增强生成系统通过搜索已有知识库内容并输入大模型进行总结和生成...","cite_index":null,"published_at":1757606400.0,"site_icon":"https://cdn.deepseek.com/site-icons/csdn.net","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://cloud.tencent.cn/developer/article/1112814?from=15425","title":"李彦宏的新专利和Google对话搜索有何不同？","snippet":"多轮识别专利，已应用在百度语音助手上 ... 总结百度多轮识别专利，有三个特点让人机对话更加自然：一是让机器不断向用户索取信息；二是支持图像、语音和手势等多媒体；三是可大幅提高对象的识别准确率。","cite_index":null,"published_at":1524844800.0,"site_icon":"https://cdn.deepseek.com/site-icons/tencent.cn","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://www.yext.com/blog/how-multi-fanned-queries-change-visibility","title":"From One Question to a Conversation: How Multi-Fanned Queries Change Visibility | Yext","snippet":"Search has shifted from single queries to multi-turn AI conversations. Learn why brands disappear mid-conversation and what it takes to stay visible. ... a multi-fanned query starts with one question and expands (or fans) into multiple, intent-rich directions. It's a defining pattern in multi-turn, conversational AI search queries and a major part of today's AI search customer journey.","cite_index":null,"published_at":1772726400.0,"site_icon":"https://cdn.deepseek.com/site-icons/yext.com","site_name":"Yext","query_indexes":[0]},{"url":"https://developer.baidu.com/article/detail.html?id=6925288","title":"深度搜索：基于大模型与多模态融合的下一代搜索技术解析","snippet":"深度搜索代表搜索技术从”信息检索”向”知识服务”的范式转变。通过持续的技术迭代与生态建设，这项技术正在重塑人类获取与利用信息的方式，为智能化社会构建关键基础设施。开发者应密切关注其演进趋势...","cite_index":null,"published_at":1778169600.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度开发者中心","query_indexes":[0]},{"url":"https://www.elastic.co/search-labs/cn/blog/context-engineering-hybrid-search-evolution-agentic-ai","title":"面向代理人工智能的情境工程和混合搜索演化 - Elasticsearch Labs","snippet":"混合搜索（不仅仅是混合检索）将传统词汇搜索的优势与 LLM 的语义理解和向量相似性搜索相结合。这种协同作用允许在检索阶段通过搜索引擎提供的任何灵活的查询语法选项：意图驱动语法选项和相关性评分、多模态数据检索、过滤、聚合和偏置来定位高度相关的结果。","cite_index":null,"published_at":1761062400.0,"site_icon":"https://cdn.deepseek.com/site-icons/elastic.co","site_name":"Elastic","query_indexes":[0]},{"url":"https://developer.baidu.com/article/detail.html?id=6922812","title":"AI驱动的搜索引擎技术演进与生态构建","snippet":"搜索引擎的智能化转型始于2023年初，某主流云服务商率先将生成式AI技术引入搜索核心链路 ... - 多轮对话记忆：引入向量数据库存储对话历史，支持上下文感知的连续交互，会话保持率提升至68% 最新一代架构（4.5-Quantum）进一步突破技术边界： # 示例...","cite_index":null,"published_at":1778169600.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度开发者中心","query_indexes":[0]},{"url":"https://uk.themedialeader.com/zero-click-is-nothing-new-but-were-navigating-an-entirely-new-playing-field/","title":"Zero-click is nothing new but we're navigating an entirely new playing field","snippet":"It seems that these repeat searches are most impacted by trends in AI search (a 20% drop in Desktop repeat searches). The ability to force nuanced, complex and deeply specific AI-generated answers from a search engine is leading to consumers moving from “keyword” style to “prompt style” search.","cite_index":null,"published_at":1774800000.0,"site_icon":"https://cdn.deepseek.com/site-icons/themedialeader.com","site_name":"The Media Leader","query_indexes":[0]},{"url":"https://news.mydrivers.com/1/1055/1055709.htm","title":"360集团副总裁梁志辉：借助超级搜索智能体 普通人也能拥有一群“AI专家团队”","snippet":"进入2.0阶段，行业开始探索大模型与搜索的深度融合，通过大模型进行意图识别，实现多意图全网搜索，以促进信息对称。但随该阶段的搜索体验与前代相比差异仍不显著。","cite_index":null,"published_at":1750694400.0,"site_icon":"https://cdn.deepseek.com/site-icons/mydrivers.com","site_name":"驱动之家","query_indexes":[0]},{"url":"https://eu.36kr.com/en/p/3333408675670530","title":"Search Paradigm Revolution: Consensus on Nano AI and Google's \"Super Search Agent\"","snippet":"In 2025, \"Agentization\" is no longer just empty talk but a real \"typhoon\" that has arrived. ... In 2025, in the era of AI Search 3.0, search agents have finally rewritten the rules of the game, making the \"Task Engine,\" that is, what we call Super Search, possible.","cite_index":null,"published_at":1749657600.0,"site_icon":"https://cdn.deepseek.com/site-icons/36kr.com","site_name":"36Kr","query_indexes":[0]},{"url":"https://blog.gitcode.com/d150dcd5c65b4ab79fa72333b11ec4c4.html","title":"Search-R1项目评估效率优化实践","snippet":"采用多机分布式评估可以显著提升评估效率。Search-R1支持多节点并行评估，通过合理分配评估任务到不同计算节点，可以线性提升评估速度。具体实现需要注意节点间的通信效率和负载均衡。","cite_index":null,"published_at":1751644800.0,"site_icon":"https://cdn.deepseek.com/site-icons/gitcode.com","site_name":"GitCode","query_indexes":[0]},{"url":"https://zhuanlan.zhihu.com/p/1919904840391333662","title":"为了测试大模型的「搜商」，OpenAI 开源测评基准 BrowseComp","snippet":"在多轮搜索的过程中，既要有规划能力，也要有去伪存真的条件验证能力，人类在执行搜索时可以直接摒弃排除掉某个页面，而大模型则需要正确规划并在有限的上下文里「注意到」正确答案。","cite_index":null,"published_at":1750435200.0,"site_icon":"https://cdn.deepseek.com/site-icons/zhihu.com","site_name":"知乎专栏","query_indexes":[0]},{"url":"https://www.sensecore.cn/developer/article/posts/9","title":"分钟级交付","snippet":"📌思路：设置多个检索器在不同粒度进行检索或使用不同的相似度计算方法进行文档召回，对所有检索器召回的文档进行排序得到最终上下文。 📌常用方法： 不同粒度的检索器：如原文分块+文档摘要/问答对","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/sensecore.cn","site_name":"SenseCore 商汤大装置","query_indexes":[0]},{"url":"https://milvus.org.cn/ai-quick-reference/how-do-you-decide-how-many-retrieval-rounds-to-allow-depth-of-multistep-before-just-answering-with-whats-gathered-what-is-the-diminishing-return-and-how-to-measure-it","title":"你如何决定允许多少轮检索（多步骤的深度），之后直接用收集到的信息回答？什么是收益递减，以及如何衡量它？","snippet":"在多步骤系统中决定检索轮数需要平衡准确性、效率和实际约束。最佳深度通常取决于评估每一步提供的额外价值与延迟或计算资源成本的对比。例如 ... 一种常见的方法是基于测试设置一个固定的限制（例如，3-5步），因为大多数查询在几次迭代后效用会达到稳定。也可以使用动态停止标准，例如置信度阈值或最小增量收益。","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/milvus.org.cn","site_name":"milvus.org.cn","query_indexes":[0]},{"url":"https://cloud.tencent.cn/developer/article/2553732?policyId=1004","title":"15分钟读懂大模型智能体评估：指标、框架与落地实践","snippet":"今天我将系统拆解多轮对话、RAG、智能体三类场景的评估方案，并对比主流框架的工程适配性，希望对各位有所帮助。 #### 一、评估范式演进：从传统指标到系统化评估","cite_index":null,"published_at":1754841600.0,"site_icon":"https://cdn.deepseek.com/site-icons/tencent.cn","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://www.elastic.co/search-labs/cn/blog/judgment-lists","title":"Search quality evaluation with judgement lists - Elasticsearch Labs","snippet":"Explore why a judgment list is essential, the different types of judgments, and the key factors that define search quality. ... A judgment list is a curated set of search queries paired with relevance ratings for their corresponding results, also known as a test collection. Metrics computed using this list act as a benchmark for measuring how well a search engine performs. Here’s why it’s indispensable...","cite_index":null,"published_at":1747584000.0,"site_icon":"https://cdn.deepseek.com/site-icons/elastic.co","site_name":"Elastic","query_indexes":[0]},{"url":"https://arxiv.org/html/2601.05503","title":"Over-Searching in Search-Augmented Large Language Models","snippet":"In this work, we conduct a systematic evaluation of over-searching across multiple dimensions, including query types, model categories, retrieval conditions, and multi-turn conversations. Our findings show ... To quantify over-searching, we introduce Tokens Per Correctness (TPC), an evaluation metric that captures the performance-cost trade-off for search-augmented LLMs.","cite_index":null,"published_at":1773158400.0,"site_icon":"https://cdn.deepseek.com/site-icons/arxiv.org","site_name":"arXiv","query_indexes":[0]},{"url":"https://cloud.tencent.cn/developer/article/2319879","title":"解密Prompt系列14. LLM Agent之搜索应用设计：WebGPT & WebGLM & WebCPM","snippet":"WebCPM其实是这三篇论文中最新的一篇，所以集成了webgpt和webglm的一些方案。构建了通过和搜索引擎进行多轮交互，来完成长文本开放问答(LFQA)的整体方案。它使用的搜索API是Bing。23名标注人员通过和搜索进行多轮交互...","cite_index":null,"published_at":1693411200.0,"site_icon":"https://cdn.deepseek.com/site-icons/tencent.cn","site_name":"CSDN博客","query_indexes":[0]},{"url":"https://exa.ai/versus/tavily","title":"Exa vs Tavily: AI Search API Comparison 2026","snippet":"Exa is faster, more accurate on hard queries, and has dedicated people, company, and code search. ... On WebWalker (complex multi-hop retrieval), Exa scored 81% vs Tavily's 71% in an independent Fortune 100 enterprise evaluation. On multilingual queries (MKQA)...","cite_index":null,"published_at":1770825600.0,"site_icon":"https://cdn.deepseek.com/site-icons/exa.ai","site_name":"Exa","query_indexes":[0]},{"url":"https://cloud.baidu.com/article/4699380","title":"替代百度搜索的6大高效工具：解锁更多资源与精准搜索","snippet":"1. Searx（开源元搜索引擎） - 核心优势：Searx是一个开源的元搜索引擎，聚合Google、Bing、DuckDuckGo等数十个搜索引擎的结果，避免单一搜索引擎的算法偏见。用户可自定义搜索源（如仅启用学术数据库） ... 2. Qwant（欧洲隐私优先搜索引擎）","cite_index":null,"published_at":1762185600.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度智能云","query_indexes":[0]},{"url":"https://cstc.org.cn/info/1555/253489.htm","title":"【实验室】真实测评第三弹！深度AI搜索评测，实用性到底几何？","snippet":"本次模糊搜索能力评测中，MiniMax及Kimi表现欠佳，未能准确定位高度相关的答案，结果偏差显著，最终评分不理想。腾讯元宝、文心一言以及百度 AI 搜索在本轮评测中表现卓越，均斩获满分佳绩，展现出在模糊搜索领域的强大实力与精准度。","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/cstc.org.cn","site_name":"中国软件评测中心","query_indexes":[0]},{"url":"https://www.ccidgroup.com/info/2110/43143.htm","title":"【实验室】真实测评第三弹！深度AI搜索评测，实用性到底几何？ 人工智能事业部 中国软件评测中心 2025年03月07日 16:29 北京-中国电子信息产业发展研究院","snippet":"测试范畴涵盖核心性能指标与用户体验性指标两大维度，旨在从多维度、深层次剖析新型 AI 搜索的应用价值与发展潜力 ... 腾讯元宝、文心一言以及百度 AI 搜索在本轮评测中表现卓越，均斩获满分佳绩，展现出在模糊搜索领域的强大实力与精准度。","cite_index":null,"published_at":1741276800.0,"site_icon":"https://cdn.deepseek.com/site-icons/ccidgroup.com","site_name":"中国电子信息产业发展研究院","query_indexes":[0]},{"url":"https://developer.baidu.com/article/detail.html?id=7083175","title":"AI应用构建平台搜索工具选型与实战指南","snippet":"简介：本文聚焦开源AI应用开发平台的搜索工具选型，对比分析主流方案的优缺点，结合真实测试数据与成本模型，为开发者提供技术选型决策依据。通过环境搭建 ... 二、主流搜索工具技术特性对比 #### 1. 无配置方案：匿名搜索引擎","cite_index":null,"published_at":1778601600.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度开发者中心","query_indexes":[0]},{"url":"https://column.iresearch.cn/b/202508/1007821.shtml","title":"ai搜索引擎研究_白皮书","snippet":"?天工AI搜索?：支持对话式交互和多轮追问，集成了文档分析与创作功能，适合自媒体内容生成和金融数据分析。 ?Perplexity AI?：结合GPT-4等先进模型，提供学术级引用和多源信息整合，适用于复杂问题推理和论文参考文献检索。","cite_index":null,"published_at":1754064000.0,"site_icon":"https://cdn.deepseek.com/site-icons/iresearch.cn","site_name":"艾瑞网","query_indexes":[0]},{"url":"https://hub.baai.ac.cn/paper/a36cde10-960a-468a-8ee2-092b5184020f","title":"MMSearch-R1: Incentivizing LMMs to Search","snippet":"我们提出了MMSearch-R1，这是首个端到端的强化学习框架，使LMM能够在真实互联网环境中按需进行多轮搜索。我们的框架整合了图像和文本搜索工具，允许模型根据基于结果并带有搜索惩罚机制的奖励信号来判断何时以及如何调用这些工具。为了支持训练...","cite_index":null,"published_at":1750867200.0,"site_icon":"https://cdn.deepseek.com/site-icons/baai.ac.cn","site_name":"智源社区","query_indexes":[0]},{"url":"https://developer.aliyun.com/article/1657999","title":"SEARCH-R1: 基于强化学习的大型语言模型多轮搜索与推理框架","snippet":"这个研究提出了一种新型强化学习(RL)框架SEARCH-R1，该框架使大型语言模型(LLM)能够实现多轮、交错的搜索与推理能力集成。不同于传统的检索增强生成(RAG)或工具使用方法，SEARCH-R1通过强化学习训练LLM自主生成查询语句，并优化其基于搜索引擎结果的推理过程。","cite_index":null,"published_at":1742486400.0,"site_icon":"https://cdn.deepseek.com/site-icons/aliyun.com","site_name":"阿里云开发者社区","query_indexes":[0]},{"url":"https://developer.baidu.com/article/detail.html?id=6991270","title":"全链路智能研究框架开源：动态搜索与知识推理的工程化实践","snippet":"开发者可快速集成多轮搜索与推理能力，显著提升复杂问题的解答质量与可信度 ... - 动态搜索策略：基于上下文感知的关键词生成算法，可自动识别当前搜索阶段的认知缺口 - 多轮验证机制：通过交叉引用验证、时效性检查等手段，构建可信知识图谱","cite_index":null,"published_at":1778428800.0,"site_icon":"https://cdn.deepseek.com/site-icons/baidu.com","site_name":"百度开发者中心","query_indexes":[0]},{"url":"https://huggingface.ac.cn/papers/2506.20670","title":"MMSearch-R1：激励LMM进行搜索","snippet":"我们提出了 MMSearch-R1，这是第一个端到端的强化学习框架，它使 LMM 能够在真实世界互联网环境中执行按需、多轮搜索。我们的框架集成了图像和文本搜索工具，允许模型根据基于结果的奖励和搜索惩罚来判断何时以及如何调用它们。为了支持训练...","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/huggingface.ac.cn","site_name":"huggingface.ac.cn","query_indexes":[0]},{"url":"https://arxiv.deeppaper.ai/papers/2510.12801v1","title":"DeepMMSearch-R1：赋能多模态LLM进行多模态网络搜索","snippet":"并且可以基于检索到的信息迭代地调整文本搜索查询，从而实现自我反思和自我纠正。我们的方法依赖于一个两阶段的训练管道 ... DeepMMSearch-R1是一个多模态LLM，它执行按需、多轮网络搜索，并为图像和文本动态创建查询，使用新型多模态VQA数据集进行训练 ... 我们提出了 MMSearch-R1，这是第一个端到端的强化学习框架...","cite_index":null,"published_at":null,"site_icon":"https://cdn.deepseek.com/site-icons/deeppaper.ai","site_name":"deeppaper.ai","query_indexes":[0]},{"url":"https://news.qq.com/rain/a/20250321A031AV00?scene=qqsearch&suid=&media_id=","title":"SEARCH-R1: 基于强化学习的大型语言模型多轮搜索与推理框架","snippet":"这个研究提出了一种新型强化学习(RL)框架SEARCH-R1，该框架使大型语言模型(LLM)能够实现多轮、交错的搜索与推理能力集成。不同于传统的检索增强生成(RAG)或工具使用方法 ... 研究中包含了多个说明性案例(如验证名人出生地等事实信息)，其中SEARCH-R1明显优于不具备搜索能力的RL模型。迭代查询和自我验证过程凸显了实时检索集成...","cite_index":null,"published_at":1742486400.0,"site_icon":"https://cdn.deepseek.com/site-icons/qq.com","site_name":"QQ News","query_indexes":[0]}]}
+
+data: {"p":"response/fragments/-1/status","v":"FINISHED"}
+
+data: {"p":"response/has_pending_fragment","v":true}
+
+data: {"p":"response","o":"BATCH","v":[{"p":"fragments","o":"APPEND","v":[{"id":19,"type":"THINK","content":"第三","elapsed_secs":null,"references":[],"stage_id":5}]},{"p":"has_pending_fragment","o":"SET","v":false}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"已经"}
+
+data: {"v":"完成"}
+
+data: {"v":"。"}
+
+data: {"v":"现在"}
+
+data: {"v":"，"}
+
+data: {"v":"我需要"}
+
+data: {"v":"根据"}
+
+data: {"v":"所有"}
+
+data: {"v":"搜索结果"}
+
+data: {"v":"来"}
+
+data: {"v":"回答"}
+
+data: {"v":"用户"}
+
+data: {"v":"的问题"}
+
+data: {"v":"。"}
+
+data: {"v":"用户"}
+
+data: {"v":"要求"}
+
+data: {"v":"进行"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"测试"}
+
+data: {"v":"，"}
+
+data: {"v":"我需要"}
+
+data: {"v":"展示"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"的过程"}
+
+data: {"v":"和"}
+
+data: {"v":"结果"}
+
+data: {"v":"。"}
+
+data: {"v":"我的"}
+
+data: {"v":"回答"}
+
+data: {"v":"将"}
+
+data: {"v":"涵盖"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"的定义"}
+
+data: {"v":"、"}
+
+data: {"v":"方法"}
+
+data: {"v":"、"}
+
+data: {"v":"工具"}
+
+data: {"v":"、"}
+
+data: {"v":"应用"}
+
+data: {"v":"、"}
+
+data: {"v":"挑战"}
+
+data: {"v":"、"}
+
+data: {"v":"评估"}
+
+data: {"v":"、"}
+
+data: {"v":"未来"}
+
+data: {"v":"趋势"}
+
+data: {"v":"、"}
+
+data: {"v":"案例"}
+
+data: {"v":"研究"}
+
+data: {"v":"等"}
+
+data: {"v":"。"}
+
+data: {"v":"我会"}
+
+data: {"v":"引用"}
+
+data: {"v":"一些"}
+
+data: {"v":"来源"}
+
+data: {"v":"来"}
+
+data: {"v":"支持"}
+
+data: {"v":"我的"}
+
+data: {"v":"观点"}
+
+data: {"v":"。"}
+
+data: {"p":"response/fragments/-1/elapsed_secs","o":"SET","v":2.774259962}
+
+data: {"p":"response/fragments","o":"APPEND","v":[{"id":20,"type":"RESPONSE","content":"**","references":[],"stage_id":5}]}
+
+data: {"p":"response/fragments/-1/content","v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"**"}
+
+data: {"v":"并非"}
+
+data: {"v":"指"}
+
+data: {"v":"单"}
+
+data: {"v":"次"}
+
+data: {"v":"输入"}
+
+data: {"v":"多个"}
+
+data: {"v":"关键词"}
+
+data: {"v":"的"}
+
+data: {"v":"“"}
+
+data: {"v":"批量"}
+
+data: {"v":"搜索"}
+
+data: {"v":"”，"}
+
+data: {"v":"而是"}
+
+data: {"v":"指"}
+
+data: {"v":"一个"}
+
+data: {"v":"迭代"}
+
+data: {"v":"式"}
+
+data: {"v":"、"}
+
+data: {"v":"智能"}
+
+data: {"v":"化的"}
+
+data: {"v":"信息"}
+
+data: {"v":"检索"}
+
+data: {"v":"过程"}
+
+data: {"v":"。"}
+
+data: {"v":"它"}
+
+data: {"v":"通过与"}
+
+data: {"v":"AI"}
+
+data: {"v":"、"}
+
+data: {"v":"搜索引擎"}
+
+data: {"v":"等"}
+
+data: {"v":"系统的"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"交互"}
+
+data: {"v":"，"}
+
+data: {"v":"逐步"}
+
+data: {"v":"聚焦"}
+
+data: {"v":"需求"}
+
+data: {"v":"、"}
+
+data: {"v":"补"}
+
+data: {"v":"全"}
+
+data: {"v":"信息"}
+
+data: {"v":"，"}
+
+data: {"v":"最终"}
+
+data: {"v":"找到"}
+
+data: {"v":"最"}
+
+data: {"v":"精准"}
+
+data: {"v":"的目标"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:0]"},{"p":"references","o":"SET","v":[{"id":3,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。"}
+
+data: {"v":"它"}
+
+data: {"v":"类似于"}
+
+data: {"v":"人类"}
+
+data: {"v":"解决问题的"}
+
+data: {"v":"“"}
+
+data: {"v":"边"}
+
+data: {"v":"想"}
+
+data: {"v":"边"}
+
+data: {"v":"搜"}
+
+data: {"v":"”"}
+
+data: {"v":"模式"}
+
+data: {"v":"，"}
+
+data: {"v":"也是"}
+
+data: {"v":"当前"}
+
+data: {"v":"AI"}
+
+data: {"v":" Agent"}
+
+data: {"v":"等"}
+
+data: {"v":"应用"}
+
+data: {"v":"的核心"}
+
+data: {"v":"能力"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:1]"},{"p":"references","v":[{"id":16,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。\n\n"}
+
+data: {"v":"具体"}
+
+data: {"v":"来看"}
+
+data: {"v":"，"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"可以分为"}
+
+data: {"v":"以下几个"}
+
+data: {"v":"关键"}
+
+data: {"v":"层次"}
+
+data: {"v":"：\n\n"}
+
+data: {"v":"###"}
+
+data: {"v":" 🔎"}
+
+data: {"v":" "}
+
+data: {"v":"信息"}
+
+data: {"v":"获取"}
+
+data: {"v":"的多"}
+
+data: {"v":"轮"}
+
+data: {"v":"交互"}
+
+data: {"v":"\n"}
+
+data: {"v":"这是"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"最"}
+
+data: {"v":"核心"}
+
+data: {"v":"的场景"}
+
+data: {"v":"。"}
+
+data: {"v":"无论是"}
+
+data: {"v":"AI"}
+
+data: {"v":" Agent"}
+
+data: {"v":"、"}
+
+data: {"v":"知识"}
+
+data: {"v":"库"}
+
+data: {"v":"还是"}
+
+data: {"v":"普通"}
+
+data: {"v":"用户的"}
+
+data: {"v":"对话"}
+
+data: {"v":"式"}
+
+data: {"v":"搜索"}
+
+data: {"v":"，"}
+
+data: {"v":"都不是"}
+
+data: {"v":"简单"}
+
+data: {"v":"的一"}
+
+data: {"v":"问"}
+
+data: {"v":"一"}
+
+data: {"v":"答"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:2]"},{"p":"references","v":[{"id":16,"type":"TOOL_SEARCH"}]}]}
+
+data: {"v":[{"p":"content","o":"APPEND","v":"[reference:3]"},{"p":"references","v":[{"id":16,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。\n\n"}
+
+data: {"v":"*"}
+
+data: {"v":"  "}
+
+data: {"v":" **"}
+
+data: {"v":"思考"}
+
+data: {"v":"与"}
+
+data: {"v":"搜索"}
+
+data: {"v":"交错"}
+
+data: {"v":"进行"}
+
+data: {"v":" ("}
+
+data: {"v":"边"}
+
+data: {"v":"想"}
+
+data: {"v":"边"}
+
+data: {"v":"搜"}
+
+data: {"v":")**"}
+
+data: {"v":"："}
+
+data: {"v":"AI"}
+
+data: {"v":" Agent"}
+
+data: {"v":"或"}
+
+data: {"v":"AI"}
+
+data: {"v":"搜索"}
+
+data: {"v":"功能"}
+
+data: {"v":"在处理"}
+
+data: {"v":"复杂"}
+
+data: {"v":"问题时"}
+
+data: {"v":"，"}
+
+data: {"v":"会"}
+
+data: {"v":"进行"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"与"}
+
+data: {"v":"推理"}
+
+data: {"v":"，"}
+
+data: {"v":"动态"}
+
+data: {"v":"调整"}
+
+data: {"v":"搜索"}
+
+data: {"v":"方向"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:4]"},{"p":"references","v":[{"id":16,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。"}
+
+data: {"v":"例如"}
+
+data: {"v":"，"}
+
+data: {"v":"先"}
+
+data: {"v":"进行"}
+
+data: {"v":"初步"}
+
+data: {"v":"搜索"}
+
+data: {"v":"，"}
+
+data: {"v":"然后"}
+
+data: {"v":"根据"}
+
+data: {"v":"结果"}
+
+data: {"v":"分析"}
+
+data: {"v":"出新"}
+
+data: {"v":"线索"}
+
+data: {"v":"，"}
+
+data: {"v":"再"}
+
+data: {"v":"发起"}
+
+data: {"v":"下一"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"，"}
+
+data: {"v":"直到"}
+
+data: {"v":"信息"}
+
+data: {"v":"充足"}
+
+data: {"v":"。\n"}
+
+data: {"v":"*"}
+
+data: {"v":"  "}
+
+data: {"v":" **"}
+
+data: {"v":"对话"}
+
+data: {"v":"中的"}
+
+data: {"v":"指"}
+
+data: {"v":"代"}
+
+data: {"v":"消"}
+
+data: {"v":"解"}
+
+data: {"v":"与"}
+
+data: {"v":"上下文"}
+
+data: {"v":"理解"}
+
+data: {"v":"**"}
+
+data: {"v":"："}
+
+data: {"v":"在多"}
+
+data: {"v":"轮"}
+
+data: {"v":"对话"}
+
+data: {"v":"中"}
+
+data: {"v":"，"}
+
+data: {"v":"后续"}
+
+data: {"v":"问题"}
+
+data: {"v":"常"}
+
+data: {"v":"包含"}
+
+data: {"v":"指"}
+
+data: {"v":"代"}
+
+data: {"v":"（"}
+
+data: {"v":"如"}
+
+data: {"v":"“"}
+
+data: {"v":"它"}
+
+data: {"v":"”）"}
+
+data: {"v":"或"}
+
+data: {"v":"省略"}
+
+data: {"v":"（"}
+
+data: {"v":"如"}
+
+data: {"v":"“"}
+
+data: {"v":"国内"}
+
+data: {"v":"哪里"}
+
+data: {"v":"”"}
+
+data: {"v":"）。"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"能"}
+
+data: {"v":"结合"}
+
+data: {"v":"历史"}
+
+data: {"v":"对话"}
+
+data: {"v":"信息"}
+
+data: {"v":"，"}
+
+data: {"v":"自动"}
+
+data: {"v":"改写"}
+
+data: {"v":"查询"}
+
+data: {"v":"，"}
+
+data: {"v":"确保"}
+
+data: {"v":"意图"}
+
+data: {"v":"准确"}
+
+data: {"v":"，"}
+
+data: {"v":"避免"}
+
+data: {"v":"答"}
+
+data: {"v":"非"}
+
+data: {"v":"所"}
+
+data: {"v":"问"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:5]"},{"p":"references","v":[{"id":3,"type":"TOOL_SEARCH"}]}]}
+
+data: {"v":[{"p":"content","o":"APPEND","v":"[reference:6]"},{"p":"references","v":[{"id":8,"type":"TOOL_OPEN"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。\n"}
+
+data: {"v":"*"}
+
+data: {"v":"  "}
+
+data: {"v":" **"}
+
+data: {"v":"自主"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"知识"}
+
+data: {"v":"库"}
+
+data: {"v":"检索"}
+
+data: {"v":" ("}
+
+data: {"v":"Agent"}
+
+data: {"v":"自助"}
+
+data: {"v":"搜索"}
+
+data: {"v":")**"}
+
+data: {"v":"："}
+
+data: {"v":"AI"}
+
+data: {"v":" Agent"}
+
+data: {"v":"能"}
+
+data: {"v":"自主"}
+
+data: {"v":"决定"}
+
+data: {"v":"在"}
+
+data: {"v":"知识"}
+
+data: {"v":"库"}
+
+data: {"v":"中"}
+
+data: {"v":"搜索"}
+
+data: {"v":"的策略"}
+
+data: {"v":"，"}
+
+data: {"v":"例如"}
+
+data: {"v":"，"}
+
+data: {"v":"先"}
+
+data: {"v":"搜索"}
+
+data: {"v":"文件名"}
+
+data: {"v":"，"}
+
+data: {"v":"再"}
+
+data: {"v":"深入"}
+
+data: {"v":"相关"}
+
+data: {"v":"文件"}
+
+data: {"v":"查找"}
+
+data: {"v":"具体"}
+
+data: {"v":"内容"}
+
+data: {"v":"块"}
+
+data: {"v":"，"}
+
+data: {"v":"通过"}
+
+data: {"v":"多次"}
+
+data: {"v":"检索"}
+
+data: {"v":"逼近"}
+
+data: {"v":"目标"}
+
+data: {"v":"信息"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:7]"},{"p":"references","v":[{"id":16,"type":"TOOL_SEARCH"}]}]}
+
+data: {"v":[{"p":"content","o":"APPEND","v":"[reference:8]"},{"p":"references","v":[{"id":18,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。\n\n"}
+
+data: {"v":"###"}
+
+data: {"v":" 🛠"}
+
+data: {"v":"️"}
+
+data: {"v":" "}
+
+data: {"v":"基础设施"}
+
+data: {"v":"层面的"}
+
+data: {"v":"多"}
+
+data: {"v":"路"}
+
+data: {"v":"并发"}
+
+data: {"v":"与"}
+
+data: {"v":"数据"}
+
+data: {"v":"源"}
+
+data: {"v":"融合"}
+
+data: {"v":"\n"}
+
+data: {"v":"在"}
+
+data: {"v":"技术"}
+
+data: {"v":"底层"}
+
+data: {"v":"，"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"也"}
+
+data: {"v":"指"}
+
+data: {"v":"**"}
+
+data: {"v":"多"}
+
+data: {"v":"路"}
+
+data: {"v":"搜索"}
+
+data: {"v":"**"}
+
+data: {"v":"——"}
+
+data: {"v":"一种"}
+
+data: {"v":"并行"}
+
+data: {"v":"检索"}
+
+data: {"v":"的"}
+
+data: {"v":"架构"}
+
+data: {"v":"。\n\n"}
+
+data: {"v":"*"}
+
+data: {"v":"  "}
+
+data: {"v":" **"}
+
+data: {"v":"并行"}
+
+data: {"v":"查询"}
+
+data: {"v":"执行"}
+
+data: {"v":"与"}
+
+data: {"v":"融合"}
+
+data: {"v":"排序"}
+
+data: {"v":"**"}
+
+data: {"v":"："}
+
+data: {"v":"系统"}
+
+data: {"v":"单"}
+
+data: {"v":"次"}
+
+data: {"v":"并行"}
+
+data: {"v":"发起"}
+
+data: {"v":"多个"}
+
+data: {"v":"独立"}
+
+data: {"v":"查询"}
+
+data: {"v":"（"}
+
+data: {"v":"如"}
+
+data: {"v":"文本"}
+
+data: {"v":"、"}
+
+data: {"v":"向量"}
+
+data: {"v":"、"}
+
+data: {"v":"不同"}
+
+data: {"v":"索引"}
+
+data: {"v":"），"}
+
+data: {"v":"然后将"}
+
+data: {"v":"结果"}
+
+data: {"v":"去"}
+
+data: {"v":"重"}
+
+data: {"v":"、"}
+
+data: {"v":"合并"}
+
+data: {"v":"并"}
+
+data: {"v":"统一"}
+
+data: {"v":"排序"}
+
+data: {"v":"，"}
+
+data: {"v":"大幅"}
+
+data: {"v":"提升"}
+
+data: {"v":"检索"}
+
+data: {"v":"效率"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:9]"},{"p":"references","v":[{"id":3,"type":"TOOL_SEARCH"}]}]}
+
+data: {"v":[{"p":"content","o":"APPEND","v":"[reference:10]"},{"p":"references","v":[{"id":7,"type":"TOOL_OPEN"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。\n"}
+
+data: {"v":"*"}
+
+data: {"v":"  "}
+
+data: {"v":" **"}
+
+data: {"v":"跨"}
+
+data: {"v":"多"}
+
+data: {"v":"数据"}
+
+data: {"v":"源"}
+
+data: {"v":"与"}
+
+data: {"v":"索引"}
+
+data: {"v":"的"}
+
+data: {"v":"融合"}
+
+data: {"v":"**"}
+
+data: {"v":"："}
+
+data: {"v":"支持"}
+
+data: {"v":"在一次"}
+
+data: {"v":"请求"}
+
+data: {"v":"中"}
+
+data: {"v":"跨"}
+
+data: {"v":"多个"}
+
+data: {"v":"索引"}
+
+data: {"v":"进行"}
+
+data: {"v":"搜索"}
+
+data: {"v":"，"}
+
+data: {"v":"实现"}
+
+data: {"v":"不同"}
+
+data: {"v":"数据"}
+
+data: {"v":"源"}
+
+data: {"v":"（"}
+
+data: {"v":"如"}
+
+data: {"v":"电商"}
+
+data: {"v":"平台的"}
+
+data: {"v":"商品"}
+
+data: {"v":"和"}
+
+data: {"v":"品牌"}
+
+data: {"v":"）"}
+
+data: {"v":"结果的"}
+
+data: {"v":"统一"}
+
+data: {"v":"呈现"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:11]"},{"p":"references","v":[{"id":3,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。\n"}
+
+data: {"v":"*"}
+
+data: {"v":"  "}
+
+data: {"v":" **"}
+
+data: {"v":"元"}
+
+data: {"v":"搜索引擎"}
+
+data: {"v":"与"}
+
+data: {"v":"聚合"}
+
+data: {"v":"搜索"}
+
+data: {"v":"**"}
+
+data: {"v":"："}
+
+data: {"v":"工具"}
+
+data: {"v":"同时"}
+
+data: {"v":"将"}
+
+data: {"v":"同一个"}
+
+data: {"v":"关键词"}
+
+data: {"v":"发送"}
+
+data: {"v":"至"}
+
+data: {"v":"Google"}
+
+data: {"v":"、"}
+
+data: {"v":"B"}
+
+data: {"v":"ing"}
+
+data: {"v":"、"}
+
+data: {"v":"百度"}
+
+data: {"v":"等多个"}
+
+data: {"v":"搜索引擎"}
+
+data: {"v":"，"}
+
+data: {"v":"并将"}
+
+data: {"v":"结果"}
+
+data: {"v":"汇总"}
+
+data: {"v":"，"}
+
+data: {"v":"避免"}
+
+data: {"v":"单一"}
+
+data: {"v":"引擎"}
+
+data: {"v":"的"}
+
+data: {"v":"偏见"}
+
+data: {"v":"，"}
+
+data: {"v":"获取"}
+
+data: {"v":"更"}
+
+data: {"v":"全面的"}
+
+data: {"v":"信息"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:12]"},{"p":"references","v":[{"id":3,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/references","o":"APPEND","v":[{"id":13,"type":"TOOL_OPEN"}]}
+
+data: {"p":"response/fragments/-1/content","v":"。\n\n"}
+
+data: {"v":"###"}
+
+data: {"v":" 📊"}
+
+data: {"v":" "}
+
+data: {"v":"评估"}
+
+data: {"v":"“"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"”"}
+
+data: {"v":"能力的"}
+
+data: {"v":"基准"}
+
+data: {"v":"\n"}
+
+data: {"v":"为了"}
+
+data: {"v":"衡量"}
+
+data: {"v":"AI"}
+
+data: {"v":"系统"}
+
+data: {"v":"在多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"中的"}
+
+data: {"v":"表现"}
+
+data: {"v":"，"}
+
+data: {"v":"研究者"}
+
+data: {"v":"们"}
+
+data: {"v":"开发"}
+
+data: {"v":"了"}
+
+data: {"v":"专门的"}
+
+data: {"v":"评估"}
+
+data: {"v":"基准"}
+
+data: {"v":"。\n\n"}
+
+data: {"v":"*"}
+
+data: {"v":"  "}
+
+data: {"v":" **"}
+
+data: {"v":"各类"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"与"}
+
+data: {"v":"对话"}
+
+data: {"v":"基准"}
+
+data: {"v":"**"}
+
+data: {"v":"："}
+
+data: {"v":"这些"}
+
+data: {"v":"基准"}
+
+data: {"v":"通过"}
+
+data: {"v":"模拟"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"信息"}
+
+data: {"v":"寻求"}
+
+data: {"v":"对话"}
+
+data: {"v":"，"}
+
+data: {"v":"评估"}
+
+data: {"v":"模型"}
+
+data: {"v":"在处理"}
+
+data: {"v":"不可"}
+
+data: {"v":"回答问题"}
+
+data: {"v":"、"}
+
+data: {"v":"指"}
+
+data: {"v":"代"}
+
+data: {"v":"消"}
+
+data: {"v":"解"}
+
+data: {"v":"等方面的"}
+
+data: {"v":"能力"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:14]"},{"p":"references","v":[{"id":10,"type":"TOOL_OPEN"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。"}
+
+data: {"v":"例如"}
+
+data: {"v":"，"}
+
+data: {"v":"M"}
+
+data: {"v":"TR"}
+
+data: {"v":"AG"}
+
+data: {"v":"-"}
+
+data: {"v":"UN"}
+
+data: {"v":"基准"}
+
+data: {"v":"包含"}
+
+data: {"v":"666"}
+
+data: {"v":"个"}
+
+data: {"v":"任务"}
+
+data: {"v":"和"}
+
+data: {"v":"超过"}
+
+data: {"v":"2"}
+
+data: {"v":","}
+
+data: {"v":"800"}
+
+data: {"v":"轮"}
+
+data: {"v":"对话"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:15]"},{"p":"references","v":[{"id":3,"type":"TOOL_SEARCH"}]}]}
+
+data: {"v":[{"p":"content","o":"APPEND","v":"[reference:16]"},{"p":"references","v":[{"id":9,"type":"TOOL_OPEN"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。\n"}
+
+data: {"v":"*"}
+
+data: {"v":"  "}
+
+data: {"v":" **"}
+
+data: {"v":"对"}
+
+data: {"v":"过度"}
+
+data: {"v":"搜索"}
+
+data: {"v":"现象的"}
+
+data: {"v":"探究"}
+
+data: {"v":"**"}
+
+data: {"v":"："}
+
+data: {"v":"研究者"}
+
+data: {"v":"也"}
+
+data: {"v":"关注"}
+
+data: {"v":"模型"}
+
+data: {"v":"是否存在"}
+
+data: {"v":"“"}
+
+data: {"v":"过度"}
+
+data: {"v":"搜索"}
+
+data: {"v":"”——"}
+
+data: {"v":"即在"}
+
+data: {"v":"信息"}
+
+data: {"v":"已"}
+
+data: {"v":"足够"}
+
+data: {"v":"的情况下"}
+
+data: {"v":"仍"}
+
+data: {"v":"不"}
+
+data: {"v":"必要"}
+
+data: {"v":"地"}
+
+data: {"v":"发起"}
+
+data: {"v":"搜索"}
+
+data: {"v":"。"}
+
+data: {"v":"一项"}
+
+data: {"v":"研究发现"}
+
+data: {"v":"，"}
+
+data: {"v":"搜索"}
+
+data: {"v":"虽"}
+
+data: {"v":"能"}
+
+data: {"v":"提升"}
+
+data: {"v":"可"}
+
+data: {"v":"答"}
+
+data: {"v":"问题的"}
+
+data: {"v":"准确性"}
+
+data: {"v":"，"}
+
+data: {"v":"但"}
+
+data: {"v":"会"}
+
+data: {"v":"损害"}
+
+data: {"v":"模型"}
+
+data: {"v":"在"}
+
+data: {"v":"不可"}
+
+data: {"v":"答"}
+
+data: {"v":"问题"}
+
+data: {"v":"上的"}
+
+data: {"v":"正确"}
+
+data: {"v":"拒"}
+
+data: {"v":"答"}
+
+data: {"v":"能力"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:17]"},{"p":"references","v":[{"id":16,"type":"TOOL_SEARCH"}]}]}
+
+data: {"v":[{"p":"content","o":"APPEND","v":"[reference:18]"},{"p":"references","v":[{"id":18,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。\n"}
+
+data: {"v":"*"}
+
+data: {"v":"  "}
+
+data: {"v":" **"}
+
+data: {"v":"多"}
+
+data: {"v":"跳"}
+
+data: {"v":"推理"}
+
+data: {"v":"与"}
+
+data: {"v":"复合"}
+
+data: {"v":"搜索"}
+
+data: {"v":"能力的"}
+
+data: {"v":"考察"}
+
+data: {"v":"**"}
+
+data: {"v":"："}
+
+data: {"v":"Web"}
+
+data: {"v":"Det"}
+
+data: {"v":"ective"}
+
+data: {"v":"等"}
+
+data: {"v":"基准"}
+
+data: {"v":"要求"}
+
+data: {"v":"模型"}
+
+data: {"v":"在"}
+
+data: {"v":"无"}
+
+data: {"v":"提示"}
+
+data: {"v":"的问题"}
+
+data: {"v":"中"}
+
+data: {"v":"自主"}
+
+data: {"v":"完成"}
+
+data: {"v":"多"}
+
+data: {"v":"步"}
+
+data: {"v":"推理"}
+
+data: {"v":"和"}
+
+data: {"v":"搜索"}
+
+data: {"v":"，"}
+
+data: {"v":"真正"}
+
+data: {"v":"考验"}
+
+data: {"v":"其"}
+
+data: {"v":"独立"}
+
+data: {"v":"发现"}
+
+data: {"v":"信息"}
+
+data: {"v":"的能力"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:19]"},{"p":"references","v":[{"id":3,"type":"TOOL_SEARCH"}]}]}
+
+data: {"v":[{"p":"content","o":"APPEND","v":"[reference:20]"},{"p":"references","v":[{"id":6,"type":"TOOL_OPEN"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"。\n\n"}
+
+data: {"v":"###"}
+
+data: {"v":" 📋"}
+
+data: {"v":" "}
+
+data: {"v":"总结"}
+
+data: {"v":"："}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"的关键"}
+
+data: {"v":"维度"}
+
+data: {"v":"\n\n"}
+
+data: {"v":"|"}
+
+data: {"v":" "}
+
+data: {"v":"搜索"}
+
+data: {"v":"模式"}
+
+data: {"v":" |"}
+
+data: {"v":" "}
+
+data: {"v":"核心"}
+
+data: {"v":"概念"}
+
+data: {"v":" |"}
+
+data: {"v":" "}
+
+data: {"v":"典型"}
+
+data: {"v":"应用"}
+
+data: {"v":"/"}
+
+data: {"v":"案例"}
+
+data: {"v":" |"}
+
+data: {"v":" "}
+
+data: {"v":"适用"}
+
+data: {"v":"场景"}
+
+data: {"v":" |\n"}
+
+data: {"v":"|"}
+
+data: {"v":" :"}
+
+data: {"v":"---"}
+
+data: {"v":" |"}
+
+data: {"v":" :"}
+
+data: {"v":"---"}
+
+data: {"v":" |"}
+
+data: {"v":" :"}
+
+data: {"v":"---"}
+
+data: {"v":" |"}
+
+data: {"v":" :"}
+
+data: {"v":"---"}
+
+data: {"v":" |\n"}
+
+data: {"v":"|"}
+
+data: {"v":" **"}
+
+data: {"v":"迭代"}
+
+data: {"v":"式"}
+
+data: {"v":"多"}
+
+data: {"v":"轮"}
+
+data: {"v":"交互"}
+
+data: {"v":"**"}
+
+data: {"v":" |"}
+
+data: {"v":" **"}
+
+data: {"v":"动态"}
+
+data: {"v":"规划"}
+
+data: {"v":"**"}
+
+data: {"v":"，"}
+
+data: {"v":"信息"}
+
+data: {"v":"获取"}
+
+data: {"v":"与"}
+
+data: {"v":"推理"}
+
+data: {"v":"交错"}
+
+data: {"v":"进行"}
+
+data: {"v":"，"}
+
+data: {"v":"逐"}
+
+data: {"v":"轮"}
+
+data: {"v":"逼近"}
+
+data: {"v":"答案"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:21]"},{"p":"references","v":[{"id":16,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":" |"}
+
+data: {"v":" AI"}
+
+data: {"v":"深度"}
+
+data: {"v":"搜索"}
+
+data: {"v":"、“"}
+
+data: {"v":"边"}
+
+data: {"v":"想"}
+
+data: {"v":"边"}
+
+data: {"v":"搜"}
+
+data: {"v":"”"}
+
+data: {"v":"模式"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:22]"},{"p":"references","v":[{"id":16,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"；"}
+
+data: {"v":"对话"}
+
+data: {"v":"式"}
+
+data: {"v":"搜索"}
+
+data: {"v":"的"}
+
+data: {"v":"**"}
+
+data: {"v":"指"}
+
+data: {"v":"代"}
+
+data: {"v":"消"}
+
+data: {"v":"解"}
+
+data: {"v":"**"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:23]"},{"p":"references","v":[{"id":8,"type":"TOOL_OPEN"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"；"}
+
+data: {"v":"Agent"}
+
+data: {"v":"自助"}
+
+data: {"v":"的"}
+
+data: {"v":"**"}
+
+data: {"v":"知识"}
+
+data: {"v":"库"}
+
+data: {"v":"迭代"}
+
+data: {"v":"检索"}
+
+data: {"v":"**"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:24]"},{"p":"references","v":[{"id":18,"type":"TOOL_SEARCH"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":" |"}
+
+data: {"v":" "}
+
+data: {"v":"需要"}
+
+data: {"v":"复杂"}
+
+data: {"v":"规划"}
+
+data: {"v":"的任务"}
+
+data: {"v":"（"}
+
+data: {"v":"如"}
+
+data: {"v":"行程"}
+
+data: {"v":"规划"}
+
+data: {"v":"、"}
+
+data: {"v":"专业"}
+
+data: {"v":"研"}
+
+data: {"v":"报"}
+
+data: {"v":"）；"}
+
+data: {"v":"问答"}
+
+data: {"v":"机器人"}
+
+data: {"v":"；"}
+
+data: {"v":"内部"}
+
+data: {"v":"知识"}
+
+data: {"v":"库"}
+
+data: {"v":"管理"}
+
+data: {"v":" |\n"}
+
+data: {"v":"|"}
+
+data: {"v":" **"}
+
+data: {"v":"并行"}
+
+data: {"v":"式"}
+
+data: {"v":"多"}
+
+data: {"v":"路"}
+
+data: {"v":"检索"}
+
+data: {"v":"**"}
+
+data: {"v":" |"}
+
+data: {"v":" **"}
+
+data: {"v":"空间"}
+
+data: {"v":"并"}
+
+data: {"v":"重"}
+
+data: {"v":"**"}
+
+data: {"v":"，"}
+
+data: {"v":"多"}
+
+data: {"v":"角度"}
+
+data: {"v":"、"}
+
+data: {"v":"多"}
+
+data: {"v":"源头"}
+
+data: {"v":"并发"}
+
+data: {"v":"查找"}
+
+data: {"v":"，"}
+
+data: {"v":"再"}
+
+data: {"v":"融合"}
+
+data: {"v":"结果"}
+
+data: {"p":"response/fragments/-1","o":"BATCH","v":[{"p":"content","o":"APPEND","v":"[reference:25]"},{"p":"references","v":[{"id":7,"type":"TOOL_OPEN"}]}]}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":" |"}
+
+data: {"v":" "}
+
+data: {"v":"搜索引擎"}
+
+data: {"v":"的"}
+
+data: {"v":"**"}
+
+data: {"v":"混合"}
+
+data: {"v":"检索"}
+
+data: {"v":"**"}
+
+data: {"v":"（"}
+
+data: {"v":"关键词"}
+
+data: {"v":"+"}
+
+data: {"v":"语义"}
+
+data: {"v":"）；"}
+
+data: {"v":"元"}
+
+data: {"v":"搜索引擎"}
+
+data: {"v":"的"}
+
+data: {"v":"**"}
+
+data: {"v":"聚合"}
+
+data: {"v":"搜索"}
+
+data: {"v":"**"}
+
+data: {"p":"response/fragments/-1/references","v":[{"id":13,"type":"TOOL_OPEN"}]}
+
+data: {"p":"response/fragments/-1/content","v":" |"}
+
+data: {"v":" "}
+
+data: {"v":"需要"}
+
+data: {"v":"融合"}
+
+data: {"v":"不同类型"}
+
+data: {"v":"或"}
+
+data: {"v":"来源"}
+
+data: {"v":"信息的"}
+
+data: {"v":"全域"}
+
+data: {"v":"搜索"}
+
+data: {"v":"；"}
+
+data: {"v":"性能"}
+
+data: {"v":"敏感"}
+
+data: {"v":"的低"}
+
+data: {"v":"延迟"}
+
+data: {"v":"检索"}
+
+data: {"v":"场景"}
+
+data: {"v":" |\n"}
+
+data: {"v":"|"}
+
+data: {"v":" **"}
+
+data: {"v":"系统性"}
+
+data: {"v":"评估"}
+
+data: {"v":"体系"}
+
+data: {"v":"**"}
+
+data: {"v":" |"}
+
+data: {"v":" **"}
+
+data: {"v":"量化"}
+
+data: {"v":"测试"}
+
+data: {"v":"**"}
+
+data: {"v":"，"}
+
+data: {"v":"衡量"}
+
+data: {"v":"模型"}
+
+data: {"v":"在多"}
+
+data: {"v":"轮"}
+
+data: {"v":"搜索"}
+
+data: {"v":"中的"}
+
+data: {"v":"综合"}
+
+data: {"v":"表现"}
+
+data: {"v":" |"}
+
+data: {"v":" M"}
+
+data: {"v":"TR"}
+
+data: {"v":"AG"}
+
+data: {"v":"、"}
+
+data: {"v":"Browse"}
+
+data: {"v":"Comp"}
+
+data: {"v":"、"}
+
+data: {"v":"Web"}
+
+data: {"v":"Det"}
+
+data: {"v":"ective"}
+
+data: {"v":"等"}
+
+data: {"v":"["}
+
+data: {"v":"评估"}
+
+data: {"v":"基准"}
+
+data: {"v":"]("}
+
+data: {"v":"https"}
+
+data: {"v":"://"}
+
+data: {"v":"www"}
+
+data: {"v":"."}
+
+data: {"v":"53"}
+
+data: {"v":"ai"}
+
+data: {"v":".com"}
+
+data: {"v":"/h"}
+
+data: {"v":"m"}
+
+data: {"v":"1"}
+
+data: {"v":"oe"}
+
+data: {"v":"u"}
+
+data: {"v":"/"}
+
+data: {"v":"4"}
+
+data: {"v":"j"}
+
+data: {"v":"q"}
+
+data: {"v":"6"}
+
+data: {"v":"k"}
+
+data: {"v":"7"}
+
+data: {"v":"l"}
+
+data: {"v":")"}
+
+data: {"v":" |"}
+
+data: {"v":" AI"}
+
+data: {"v":"能力"}
+
+data: {"v":"测试"}
+
+data: {"v":"、"}
+
+data: {"v":"模型"}
+
+data: {"v":"性能"}
+
+data: {"v":"对比"}
+
+data: {"v":"与"}
+
+data: {"v":"学术"}
+
+data: {"v":"研究"}
+
+data: {"v":" |\n\n"}
+
+data: {"v":"如果想"}
+
+data: {"v":"深入了解"}
+
+data: {"v":"某个"}
+
+data: {"v":"特定"}
+
+data: {"v":"类型"}
+
+data: {"v":"，"}
+
+data: {"v":"比如"}
+
+data: {"v":"AI"}
+
+data: {"v":" Agent"}
+
+data: {"v":"如何"}
+
+data: {"v":"具体"}
+
+data: {"v":"实现"}
+
+data: {"v":"“"}
+
+data: {"v":"边"}
+
+data: {"v":"想"}
+
+data: {"v":"边"}
+
+data: {"v":"搜"}
+
+data: {"v":"”，"}
+
+data: {"v":"或者"}
+
+data: {"v":"有哪些"}
+
+data: {"v":"开源"}
+
+data: {"v":"工具"}
+
+data: {"v":"，"}
+
+data: {"v":"随时"}
+
+data: {"v":"可以"}
+
+data: {"v":"告诉我"}
+
+data: {"v":"。"}
+
+data: {"p":"response","o":"BATCH","v":[{"p":"accumulated_token_usage","v":984},{"p":"quasi_status","v":"FINISHED"}]}
+
+data: {"p":"response/status","o":"SET","v":"FINISHED"}
+
+event: update_session
+data: {"updated_at":1778948913.8717499}
+
+event: title
+data: {"content":"多轮搜索测试完成"}
+
+event: close
+data: {"click_behavior":"none","auto_resume":false}
+

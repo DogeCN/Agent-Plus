@@ -1,11 +1,12 @@
 from wasmtime import Engine, Store, Linker, Module, Instance
-from config import WASM
 from base64 import b64encode
 from hashlib import sha256
 from struct import unpack
 from uuid import uuid4
 from time import time
 import ctypes
+
+from .config import WASM
 
 
 def encrypt(text: str) -> str:

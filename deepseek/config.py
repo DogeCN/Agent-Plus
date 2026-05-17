@@ -1,6 +1,6 @@
 from tomlkit import load, dump
 
-config = load(open("config.toml", encoding="utf-8"))
+config = load(open("deepseek/config.toml", encoding="utf-8"))
 accounts = config["accounts"]
 model = config["model"]
 
@@ -14,7 +14,6 @@ MODELS = CONFIG["MODELS"]
 
 HEADERS = CONFIG["HEADERS"]
 EP_ROOT = CONFIG["Endpoints"]
-UI_ROOT = CONFIG["UI"]
 
 
 class Endpoints:
@@ -30,25 +29,6 @@ class Endpoints:
 
     class Referer:
         COMPLETION = EP_ROOT["Referer"]["COMPLETION"]
-
-
-class UI:
-    SIZE = UI_ROOT["SIZE"]
-    THEME = UI_ROOT["THEME"]
-    SCALE = UI_ROOT["SCALE"]
-    TITLE = UI_ROOT["TITLE"]
-
-    class Button:
-        SEND = UI_ROOT["BUTTON"]["SEND"]
-        STOP = UI_ROOT["BUTTON"]["STOP"]
-
-    class Menu:
-        DELETE = UI_ROOT["MENU"]["DELETE"]
-        DRAFT = UI_ROOT["MENU"]["DRAFT"]
-
-    class Default:
-        SYSTEM = UI_ROOT["DEFAULT"]["SYSTEM"]
-        USER = UI_ROOT["DEFAULT"]["USER"]
 
 
 def save():
