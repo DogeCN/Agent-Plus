@@ -16,6 +16,7 @@ class Field(Frame, Base, Host[T]):
         self.scrollbar.grid(row=0, column=1, sticky=NS)
         self.text.config(yscrollcommand=self.scrollbar.set)
         self.grid_columnconfigure(0, weight=1)
+        self.grid_rowconfigure(0, weight=1)
         self.text.bind("<<Modified>>", self.edited)
 
     def _update(self):
